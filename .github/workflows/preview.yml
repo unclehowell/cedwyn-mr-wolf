@@ -1,7 +1,6 @@
 name: preview
-# Cloudflare Pages preview for every pull request (adapted from datro's deploy-qa.yml `wrangler pages deploy --branch`).
-# Needs repository secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID (the names datro uses). Without them the job
-# reports that and stops; nothing else runs. Posts ONE comment with the preview link. Never merges. - Sion's Tab agent
+# Cloudflare Pages preview for every pull request. Uses repository secrets and posts a path-aware preview URL.
+# Project is isolated from the consolidated production Pages project; never merges or updates production. — Sion's Tab agent
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -24,29 +23,48 @@ jobs:
       - name: Secrets present?
         id: s
         run: |
-          if [ -z "$CF_TOKEN" ] || [ -z "$CF_ACCOUNT" ]; then echo "::notice::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID not set; no preview."; echo ok=0 >> "$GITHUB_OUTPUT"; else echo ok=1 >> "$GITHUB_OUTPUT"; fi
+          if [ -z "$CF_TOKEN" ] || [ -z "$CF_ACCOUNT" ]; then echo "::error::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID repository secrets are missing; no preview was deployed."; exit 1; fi
       - uses: actions/checkout@v4
-        if: steps.s.outputs.ok == '1'
         with: { fetch-depth: 1 }
+      - name: Stage the app at its canonical preview path
+        run: |
+          rm -rf .git .github preview-site
+          mkdir -p preview-site/mr-wolf
+          cp index.html mw.css leaderboard.json CHANGELOG.md VERSION lang.json preview-site/mr-wolf/
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("preview-site/mr-wolf/index.html")
+          s = p.read_text()
+          for route in ("/research/evidence/", "/parcels/", "/kissed-frogs/"):
+              s = s.replace('href="' + route, 'href="https://cedwyn.bucklerfamily.estate' + route)
+          p.write_text(s)
+          PY
+          cat > preview-site/index.html <<'HTML'
+          <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=/mr-wolf/"><title>Mr Wolf preview</title><p><a href="/mr-wolf/">Open the Mr Wolf preview</a></p></html>
+          HTML
+      - name: Ensure preview project exists
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx -y wrangler@3 pages project create "$PROJECT" --production-branch main >/dev/null 2>&1 || true
       - name: Deploy preview
-        if: steps.s.outputs.ok == '1'
         id: d
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           BR: ${{ github.head_ref || github.ref_name }}
         run: |
-          DIR=.; [ -d public ] && DIR=public
-          rm -rf .git .github
-          npx -y wrangler@3 pages project create "$PROJECT" --production-branch main >/dev/null 2>&1 || true
-          npx -y wrangler@3 pages deploy "$DIR" --project-name "$PROJECT" --branch "$BR" --commit-dirty=true | tee /tmp/out.txt
-          URL=$(grep -oE 'https://[a-z0-9.-]+\.pages\.dev' /tmp/out.txt | tail -1); echo "url=$URL" >> "$GITHUB_OUTPUT"
+          npx -y wrangler@3 pages deploy preview-site --project-name "$PROJECT" --branch "$BR" --commit-dirty=true | tee /tmp/out.txt
+          URL=$(grep -oE 'https://[a-z0-9.-]+[.]pages[.]dev' /tmp/out.txt | tail -1)
+          [ -n "$URL" ] || { echo "::error::Wrangler did not return a Pages preview URL."; exit 1; }
+          URL="${URL%/}/mr-wolf/"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
       - name: Comment
-        if: steps.s.outputs.ok == '1' && github.event.pull_request.number && steps.d.outputs.url != ''
+        if: github.event.pull_request.number && steps.d.outputs.url != ''
         uses: actions/github-script@v7
         with:
           script: |
-            const body = `Preview: ${{ steps.d.outputs.url }}\n\n(Cloudflare Pages, updated on every push to this PR.)`;
+            const body = `Preview: ${{ steps.d.outputs.url }}\n\n(Cloudflare Pages isolated preview; updated on every push to this PR.)`;
             const {owner, repo} = context.repo; const issue_number = context.payload.pull_request.number;
             const cs = await github.rest.issues.listComments({owner, repo, issue_number});
             const mine = cs.data.find(c => c.body.startsWith('Preview: '));
