@@ -1,5 +1,14 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.2.0] - 2026-11-05
+### Changed
+- Replaced long, always-visible lead details with compact score cards and progressive disclosure.
+- Added nested accordions for lead context, each proof gate, next actions and linked records.
+- Added nested disclosure for the CPR 52.30 route, scoring method and authorities.
+- Added native keyboard-accessible controls, animated expansion where supported, and reduced-motion support; no JavaScript dependency.
+- No changes to legal scoring, lead scores or procedural status.
+
+
 ## [2.1.0] - 2026-11-05
 ### Corrected
 - Restricted the 200-point lead score to the four elements of a freestanding Takhar fraud action.

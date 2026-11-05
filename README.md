@@ -12,7 +12,7 @@ After a PR is merged, Cedwyn's split-repository sync copies this repository's `m
 
 Cloudflare Pages project `cedwyn-mr-wolf` is connected directly to this repository. It uses `main` as its production branch, deploys preview branches, and posts the primary preview URL automatically on each pull request. The stable branch preview for this review is:
 
-[Mr Wolf v2.1.0 app preview](https://legal-threshold-v2-1-0-previ.cedwyn-mr-wolf.pages.dev)
+[Mr Wolf v2.2.0 app preview](https://legal-threshold-v2-1-0-previ.cedwyn-mr-wolf.pages.dev)
 
 A second, supplementary preview shows the app inside the full consolidated Cedwyn site. The PR workflow posts that link from the `staging/mr-wolf-v2.1.0-preview` snapshot in `unclehowell/cedwyn`. That snapshot is separate from the split-app PR and must be refreshed after PR content changes.
 
