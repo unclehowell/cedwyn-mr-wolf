@@ -18,8 +18,10 @@ The internal floor requires at least 25/50 on **each** element. Raw total alone 
 
 CPR 52.30 is a distinct case-wide route, not part of the individual *Takhar* score. Its real-injustice, exceptional-circumstances and no-alternative-effective-remedy conditions remain unresolved; the app marks filing blocked pending independent advice. Reasonable diligence is not scored as a general element of a freestanding *Takhar* action, although abuse-of-process and other procedural issues remain separately relevant.
 
-## Review and release
+## Preview and release
 
-Cloudflare's existing consolidated Cedwyn Pages project is used for previews because the account's Pages-project quota prevents creating another connected project. For this review, the full-site v2.1.0 snapshot is staged at `staging/mr-wolf-v2.1.0-preview` in `unclehowell/cedwyn` and served at [the Cloudflare preview](https://staging-mr-wolf-v2-1-0-previ.cedwyn-274.pages.dev/mr-wolf/). This is not production. The staging snapshot is separate from this PR and needs refreshing after changes to the PR.
+Cloudflare Pages project `cedwyn-mr-wolf` is Git-connected to this repository and automatically generates pull-request previews, posting a URL in the Cloudflare integration comment. The preview is isolated from the consolidated Cedwyn production project.
+
+For full-site context, the v2.1.0 app is also staged on `staging/mr-wolf-v2.1.0-preview` in `unclehowell/cedwyn` and deployed through its existing Pages project. This secondary snapshot is separate from the split-app PR and must be refreshed when the PR content changes.
 
 On merge to `main`, Cedwyn's split-repository synchronisation copies the app to legacy `section/mr-wolf`; the consolidated site's section pin/build remains a separate release step. Do not edit the old mirror branch directly.
