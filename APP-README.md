@@ -20,6 +20,6 @@ CPR 52.30 is a distinct case-wide route, not part of the individual *Takhar* sco
 
 ## Review and release
 
-The existing consolidated Cedwyn Pages project is used for previews because Cloudflare's Pages-project quota prevents creating another connected project. For this review, the full-site v2.1.0 snapshot is staged at `staging/mr-wolf-v2.1.0-preview` in `unclehowell/cedwyn` and served at [the Cloudflare preview] (https://staging-mr-wolf-v2-1-0-previ.cedwyn-274.pages.dev/mr-wolf/). It is not production. The staging snapshot is separate from this PR and needs refreshing after changes to the PR.
+Cloudflare's existing consolidated Cedwyn Pages project is used for previews because the account's Pages-project quota prevents creating another connected project. For this review, the full-site v2.1.0 snapshot is staged at `staging/mr-wolf-v2.1.0-preview` in `unclehowell/cedwyn` and served at [the Cloudflare preview](https://staging-mr-wolf-v2-1-0-previ.cedwyn-274.pages.dev/mr-wolf/). This is not production. The staging snapshot is separate from this PR and needs refreshing after changes to the PR.
 
 On merge to `main`, Cedwyn's split-repository synchronisation copies the app to legacy `section/mr-wolf`; the consolidated site's section pin/build remains a separate release step. Do not edit the old mirror branch directly.
