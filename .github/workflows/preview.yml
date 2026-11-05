@@ -24,9 +24,9 @@ jobs:
             const sha = process.env.STAGING_COMMIT;
             const body = `Cloudflare Pages preview: ${url}
 
-            This review snapshot is served by the existing consolidated `cedwyn` Pages project from \`${branch}\` (staged commit \`${sha}\`). It is an isolated preview and does not change the production `site` branch or custom domains.
+            This review snapshot is served by the existing consolidated cedwyn Pages project from branch ${branch} (staged commit ${sha}). It is an isolated preview and does not change the production site branch or custom domains.
 
-            **Snapshot note:** this preview is staged separately from this split-repository PR. If this PR receives further content changes, refresh the staging snapshot and verify a new Cloudflare deployment before treating the preview as current.`;
+            Snapshot note: this preview is staged separately from this split-repository PR. If this PR receives further content changes, refresh the staging snapshot and verify a new Cloudflare deployment before treating the preview as current.`;
             const {owner, repo} = context.repo;
             const issue_number = context.payload.pull_request.number;
             const cs = await github.rest.issues.listComments({owner, repo, issue_number});
