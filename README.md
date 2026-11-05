@@ -10,13 +10,13 @@ After a PR is merged, Cedwyn's split-repository sync copies this repository's `m
 
 ## Pull request previews
 
-The Cloudflare Pages account is at its project limit, so Mr Wolf cannot have a second, separately Git-connected Pages project at present. The existing `cedwyn` Pages project is Git-connected to the consolidated repository and has a dedicated `staging/*` preview allow-list.
+Cloudflare Pages project `cedwyn-mr-wolf` is connected directly to this repository. It uses `main` as its production branch, deploys preview branches, and posts the primary preview URL automatically on each pull request. The stable branch preview for this review is:
 
-For this review, the v2.1.0 full-site snapshot is staged on `unclehowell/cedwyn` branch `staging/mr-wolf-v2.1.0-preview`. Cloudflare serves that isolated branch at:
+[Mr Wolf v2.1.0 app preview](https://legal-threshold-v2-1-0-previ.cedwyn-mr-wolf.pages.dev)
 
-[Mr Wolf v2.1.0 staging preview](https://staging-mr-wolf-v2-1-0-previ.cedwyn-274.pages.dev/mr-wolf/)
+A second, supplementary preview shows the app inside the full consolidated Cedwyn site. The PR workflow posts that link from the `staging/mr-wolf-v2.1.0-preview` snapshot in `unclehowell/cedwyn`. That snapshot is separate from the split-app PR and must be refreshed after PR content changes.
 
-The PR workflow comments this preview URL; it does not deploy or modify production. The staging snapshot is separate from this PR and must be refreshed when the PR content changes. The consolidated production branch remains `site`.
+Neither preview changes the consolidated production `site` branch or custom domains. Merging this PR updates the standalone Pages project's `main` deployment; Cedwyn's separate sync and consolidated site build remain the release path for the primary family site.
 
 ## Get the code
 
