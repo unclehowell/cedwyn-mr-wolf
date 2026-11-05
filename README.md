@@ -1,33 +1,21 @@
 # Mr Wolf
 
-The Mr Wolf webapp of [cedwyn.bucklerfamily.estate](https://cedwyn.bucklerfamily.estate/mr-wolf/), in its own repository
-(webapp migration 59+1, issue #188 on unclehowell/cedwyn).
+The Mr Wolf webapp for [cedwyn.bucklerfamily.estate/mr-wolf/](https://cedwyn.bucklerfamily.estate/mr-wolf/), maintained in its own repository.
 
-Split out of `unclehowell/cedwyn` branch `section/mr-wolf` on 5 Nov 2026. That repository holds about 300 branches; a job on one webapp
-should never need the rest.
+## Source of truth
+
+This repository is the canonical source (`split-repos.json` in `unclehowell/cedwyn` sets Mr Wolf to `split-repo`). The old `section/mr-wolf` branch in `unclehowell/cedwyn` is a compatibility mirror for the consolidated Cedwyn site. **Send changes as pull requests to this repository's `main` branch**, not to the old mirror.
+
+After a PR is merged, Cedwyn's split-repository sync copies this repository's `main` back into `section/mr-wolf`; the consolidated site then consumes that snapshot through `sections.lock` and its normal site build. Do not force-push or delete the old branch.
+
+## Pull request preview
+
+Every PR runs `.github/workflows/preview.yml`. It deploys an isolated preview to Cloudflare Pages project `cedwyn-mr-wolf` and comments a URL ending in `/mr-wolf/`. The preview does not update the production Cedwyn site. The workflow requires repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
 
 ## Get the code
 
-```
+```sh
 git clone --depth 1 https://github.com/unclehowell/cedwyn-mr-wolf.git
 ```
 
-## Where to send changes
-
-`split-repos.json` on `unclehowell/cedwyn` main sets the mode:
-
-- **mirror** (now): the old branch `section/mr-wolf` is the source. `mirror.yml` copies it here every 30 minutes. Send pull requests to `section/mr-wolf`.
-- **split-repo** (after the owner switches it): this repository is the source; unclehowell/cedwyn copies `main` back into `section/mr-wolf`, so the
-  live page and every old path keep working.
-
-`SPLIT.json` records the source commit of the last copy; the app's own notes, if any, are in `APP-README.md`.
-
-## Preview
-
-Cloudflare Pages project `cedwyn-mr-wolf` builds every branch and pull request: https://cedwyn-mr-wolf.pages.dev/
-
-## History before the split
-
-https://github.com/unclehowell/cedwyn/commits/section/mr-wolf
-
-Never force-push; never delete the old branch.
+History before the split: https://github.com/unclehowell/cedwyn/commits/section/mr-wolf
