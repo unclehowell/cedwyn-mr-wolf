@@ -1,54 +1,34 @@
-name: preview
-# Cloudflare Pages preview for every pull request (adapted from datro's deploy-qa.yml `wrangler pages deploy --branch`).
-# Needs repository secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID (the names datro uses). Without them the job
-# reports that and stops; nothing else runs. Posts ONE comment with the preview link. Never merges. - Sion's Tab agent
+name: preview-context-link
+# Cloudflare's GitHub integration deploys the split app automatically.
+# This action adds a second link to the full consolidated-site context preview, which is staged in unclehowell/cedwyn. — Sion's Tab agent
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  workflow_dispatch:
 permissions:
-  contents: read
   pull-requests: write
-concurrency:
-  group: preview-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
 jobs:
-  preview:
+  preview-context:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      PROJECT: cedwyn-mr-wolf
     steps:
-      - name: Secrets present?
-        id: s
-        run: |
-          if [ -z "$CF_TOKEN" ] || [ -z "$CF_ACCOUNT" ]; then echo "::notice::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID not set; no preview."; echo ok=0 >> "$GITHUB_OUTPUT"; else echo ok=1 >> "$GITHUB_OUTPUT"; fi
-      - uses: actions/checkout@v4
-        if: steps.s.outputs.ok == '1'
-        with: { fetch-depth: 1 }
-      - name: Deploy preview
-        if: steps.s.outputs.ok == '1'
-        id: d
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          BR: ${{ github.head_ref || github.ref_name }}
-        run: |
-          DIR=.; [ -d public ] && DIR=public
-          rm -rf .git .github
-          npx -y wrangler@3 pages project create "$PROJECT" --production-branch main >/dev/null 2>&1 || true
-          npx -y wrangler@3 pages deploy "$DIR" --project-name "$PROJECT" --branch "$BR" --commit-dirty=true | tee /tmp/out.txt
-          URL=$(grep -oE 'https://[a-z0-9.-]+\.pages\.dev' /tmp/out.txt | tail -1); echo "url=$URL" >> "$GITHUB_OUTPUT"
-      - name: Comment
-        if: steps.s.outputs.ok == '1' && github.event.pull_request.number && steps.d.outputs.url != ''
+      - name: Post the full-site context preview
         uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: https://staging-mr-wolf-v2-1-0-previ.cedwyn-274.pages.dev/mr-wolf/
+          STAGING_BRANCH: staging/mr-wolf-v2.1.0-preview
+          STAGING_COMMIT: 9b9cafd1d7aedf2b6c8b665218c3b25f3e4c6817
         with:
           script: |
-            const body = `Preview: ${{ steps.d.outputs.url }}\n\n(Cloudflare Pages, updated on every push to this PR.)`;
-            const {owner, repo} = context.repo; const issue_number = context.payload.pull_request.number;
+            const url = process.env.PREVIEW_URL;
+            const branch = process.env.STAGING_BRANCH;
+            const sha = process.env.STAGING_COMMIT;
+            const body = `Full-site context preview: ${url}
+
+            This is a supplementary snapshot served by the consolidated cedwyn Pages project from branch ${branch} (staged commit ${sha}). It shows Mr Wolf inside the wider Cedwyn site. It is not the primary PR preview and does not change the production site branch or custom domains.
+
+            The primary, automatically generated app preview is in the Cloudflare Pages GitHub integration comment on this PR. This full-site snapshot is staged separately and must be refreshed if this PR receives further content changes.`;
+            const {owner, repo} = context.repo;
+            const issue_number = context.payload.pull_request.number;
             const cs = await github.rest.issues.listComments({owner, repo, issue_number});
-            const mine = cs.data.find(c => c.body.startsWith('Preview: '));
+            const mine = cs.data.find(c => c.body.startsWith('Full-site context preview: '));
             if (mine) await github.rest.issues.updateComment({owner, repo, comment_id: mine.id, body});
             else await github.rest.issues.createComment({owner, repo, issue_number, body});

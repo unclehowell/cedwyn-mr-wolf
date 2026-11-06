@@ -1,0 +1,543 @@
+[
+  {
+    "version": "v0.9",
+    "createSurface": {
+      "surfaceId": "mr-wolf-index",
+      "catalogId": "https://cedwyn.bucklerfamily.estate/_cedwyn/a2ui/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9",
+    "updateComponents": {
+      "surfaceId": "mr-wolf-index",
+      "components": [
+        {
+          "id": "root",
+          "component": "Page",
+          "title": "Mr Wolf · Cedwyn",
+          "description": "Legal-readiness evidence index.",
+          "bodyClass": "mw",
+          "mainClass": "mww",
+          "cedwynPath": "/mr-wolf/",
+          "htmlAttrs": {
+            "data-cw-noclip": true,
+            "data-ghf-host": "cedwyn.bucklerfamily.estate",
+            "data-ghf-path": "/mr-wolf/"
+          },
+          "css": [
+            "mw.css?v=2.4.0"
+          ],
+          "headScripts": [
+            {
+              "src": "https://cedwyn.bucklerfamily.estate/_cedwyn/ghf/ghf-lang.js?v=2.1.6",
+              "defer": true,
+              "attrs": {
+                "data-site": "mr-wolf",
+                "data-dict": "https://cedwyn.bucklerfamily.estate/mr-wolf/lang.json"
+              }
+            },
+            {
+              "src": "https://cedwyn.bucklerfamily.estate/_cedwyn/parcel-modal.js?v=0.1.0",
+              "defer": true
+            },
+            {
+              "src": "https://cedwyn.bucklerfamily.estate/_cedwyn/ghf/ghf-boot.js?v=2.1.26"
+            }
+          ],
+          "children": [
+            "leads",
+            "route",
+            "method"
+          ]
+        },
+        {
+          "id": "leads",
+          "component": "CardList",
+          "className": "mw-rows",
+          "domId": "mr-wolf-leads",
+          "children": {
+            "path": "/database/rows",
+            "componentId": "lead"
+          }
+        },
+        {
+          "id": "lead",
+          "component": "Card",
+          "className": "mw-row mw-lead-card",
+          "kicker": {
+            "fmt": "{rank} · {id}",
+            "args": {
+              "rank": {
+                "path": "rank"
+              },
+              "id": {
+                "path": "id"
+              }
+            }
+          },
+          "title": {
+            "path": "title"
+          },
+          "meta": [
+            {
+              "label": "Evidence index",
+              "value": {
+                "fmt": "{score} / 200",
+                "args": {
+                  "score": {
+                    "path": "score"
+                  }
+                }
+              }
+            },
+            {
+              "label": "Weakest-gate progress",
+              "value": {
+                "fmt": "{progress}%",
+                "args": {
+                  "progress": {
+                    "path": "threshold_progress_percent"
+                  }
+                }
+              }
+            }
+          ],
+          "bodyLabel": "Lead",
+          "body": {
+            "path": "what"
+          },
+          "badge": {
+            "path": "status"
+          },
+          "badgeClass": "mw-status",
+          "children": [
+            "limb-strip",
+            "score-meter",
+            "progress-meter",
+            "gates",
+            "next",
+            "records"
+          ]
+        },
+        {
+          "id": "limb-strip",
+          "component": "Row",
+          "className": "mw-limbs",
+          "children": [
+            "limb-a",
+            "limb-b",
+            "limb-c",
+            "limb-d"
+          ]
+        },
+        {
+          "id": "limb-a",
+          "component": "Span",
+          "className": "mw-score-chip",
+          "text": {
+            "fmt": "A {n}/50",
+            "args": {
+              "n": {
+                "path": "limbs/a"
+              }
+            }
+          }
+        },
+        {
+          "id": "limb-b",
+          "component": "Span",
+          "className": "mw-score-chip",
+          "text": {
+            "fmt": "B {n}/50",
+            "args": {
+              "n": {
+                "path": "limbs/b"
+              }
+            }
+          }
+        },
+        {
+          "id": "limb-c",
+          "component": "Span",
+          "className": "mw-score-chip",
+          "text": {
+            "fmt": "C {n}/50",
+            "args": {
+              "n": {
+                "path": "limbs/c"
+              }
+            }
+          }
+        },
+        {
+          "id": "limb-d",
+          "component": "Span",
+          "className": "mw-score-chip",
+          "text": {
+            "fmt": "D {n}/50",
+            "args": {
+              "n": {
+                "path": "limbs/d"
+              }
+            }
+          }
+        },
+        {
+          "id": "score-meter",
+          "component": "Meter",
+          "className": "mw-bar mw-score-meter",
+          "value": {
+            "path": "score"
+          },
+          "max": 200,
+          "label": {
+            "fmt": "Evidence index: {score} of 200",
+            "args": {
+              "score": {
+                "path": "score"
+              }
+            }
+          }
+        },
+        {
+          "id": "progress-meter",
+          "component": "Meter",
+          "className": "mw-bar mw-progress-meter",
+          "value": {
+            "path": "threshold_progress_percent"
+          },
+          "max": 100,
+          "label": {
+            "fmt": "Weakest-gate progress: {progress} percent",
+            "args": {
+              "progress": {
+                "path": "threshold_progress_percent"
+              }
+            }
+          }
+        },
+        {
+          "id": "gates",
+          "component": "Details",
+          "className": "mw-detail",
+          "summary": "Four mandatory proof gates",
+          "children": [
+            "gate-a",
+            "gate-b",
+            "gate-c",
+            "gate-d"
+          ]
+        },
+        {
+          "id": "gate-a",
+          "component": "Details",
+          "className": "mw-nested mw-gate",
+          "summary": {
+            "fmt": "A · Conscious and deliberate dishonesty · {score}/50",
+            "args": {
+              "score": {
+                "path": "limbs/a"
+              }
+            }
+          },
+          "children": [
+            "gate-a-text"
+          ]
+        },
+        {
+          "id": "gate-a-text",
+          "component": "Text",
+          "className": "mw-gate-body",
+          "text": {
+            "path": "why/a"
+          }
+        },
+        {
+          "id": "gate-b",
+          "component": "Details",
+          "className": "mw-nested mw-gate",
+          "summary": {
+            "fmt": "B · Attribution and actual court deception · {score}/50",
+            "args": {
+              "score": {
+                "path": "limbs/b"
+              }
+            }
+          },
+          "children": [
+            "gate-b-text"
+          ]
+        },
+        {
+          "id": "gate-b-text",
+          "component": "Text",
+          "className": "mw-gate-body",
+          "text": {
+            "path": "why/b"
+          }
+        },
+        {
+          "id": "gate-c",
+          "component": "Details",
+          "className": "mw-nested mw-gate",
+          "summary": {
+            "fmt": "C · Operative cause and materiality · {score}/50",
+            "args": {
+              "score": {
+                "path": "limbs/c"
+              }
+            }
+          },
+          "children": [
+            "gate-c-text"
+          ]
+        },
+        {
+          "id": "gate-c-text",
+          "component": "Text",
+          "className": "mw-gate-body",
+          "text": {
+            "path": "why/c"
+          }
+        },
+        {
+          "id": "gate-d",
+          "component": "Details",
+          "className": "mw-nested mw-gate",
+          "summary": {
+            "fmt": "D · Admissible proof and provenance · {score}/50",
+            "args": {
+              "score": {
+                "path": "limbs/d"
+              }
+            }
+          },
+          "children": [
+            "gate-d-text"
+          ]
+        },
+        {
+          "id": "gate-d-text",
+          "component": "Text",
+          "className": "mw-gate-body",
+          "text": {
+            "path": "why/d"
+          }
+        },
+        {
+          "id": "next",
+          "component": "Details",
+          "className": "mw-nested",
+          "summary": "What would raise this score?",
+          "children": [
+            "next-text"
+          ]
+        },
+        {
+          "id": "next-text",
+          "component": "Text",
+          "className": "mw-next",
+          "text": {
+            "path": "what_would_raise_it"
+          }
+        },
+        {
+          "id": "records",
+          "component": "Details",
+          "className": "mw-nested",
+          "summary": "Source records",
+          "children": [
+            "record-list"
+          ]
+        },
+        {
+          "id": "record-list",
+          "component": "Section",
+          "className": "mw-source-section",
+          "list": true,
+          "listClass": "mw-record-list",
+          "children": {
+            "path": "records",
+            "componentId": "record"
+          }
+        },
+        {
+          "id": "record",
+          "component": "ListItem",
+          "text": {
+            "path": "id"
+          },
+          "href": {
+            "path": "href"
+          }
+        },
+        {
+          "id": "route",
+          "component": "Details",
+          "className": "mw-disclosure mw-route",
+          "summary": {
+            "fmt": "Procedural route · {status}",
+            "args": {
+              "status": {
+                "path": "/database/route_gate/status"
+              }
+            }
+          },
+          "children": [
+            "route-overview",
+            "cpr",
+            "takhar",
+            "unresolved"
+          ]
+        },
+        {
+          "id": "route-overview",
+          "component": "Text",
+          "className": "mw-route-text",
+          "text": {
+            "path": "/database/route_gate/governing_route"
+          }
+        },
+        {
+          "id": "cpr",
+          "component": "Details",
+          "className": "mw-nested",
+          "summary": "CPR 52.30 · reopening the final appeal",
+          "children": [
+            "cpr-req",
+            "cpr-further",
+            "cpr-auth"
+          ]
+        },
+        {
+          "id": "cpr-req",
+          "component": "TextList",
+          "className": "mw-list",
+          "items": {
+            "path": "/database/route_gate/cpr_52_30/requirements"
+          }
+        },
+        {
+          "id": "cpr-further",
+          "component": "Text",
+          "className": "mw-route-text",
+          "text": {
+            "path": "/database/route_gate/cpr_52_30/further_requirements"
+          }
+        },
+        {
+          "id": "cpr-auth",
+          "component": "TextList",
+          "className": "mw-list mw-authorities",
+          "items": {
+            "path": "/database/route_gate/cpr_52_30/authorities"
+          }
+        },
+        {
+          "id": "takhar",
+          "component": "Details",
+          "className": "mw-nested",
+          "summary": "A separate fraud action · Takhar",
+          "children": [
+            "takhar-req",
+            "takhar-diligence"
+          ]
+        },
+        {
+          "id": "takhar-req",
+          "component": "Text",
+          "className": "mw-route-text",
+          "text": {
+            "path": "/database/route_gate/takhar_action/requirements"
+          }
+        },
+        {
+          "id": "takhar-diligence",
+          "component": "Text",
+          "className": "mw-route-text",
+          "text": {
+            "path": "/database/route_gate/takhar_action/diligence"
+          }
+        },
+        {
+          "id": "unresolved",
+          "component": "Details",
+          "className": "mw-nested",
+          "summary": "Outstanding procedural questions",
+          "children": [
+            "unresolved-list",
+            "hard-stop"
+          ]
+        },
+        {
+          "id": "unresolved-list",
+          "component": "TextList",
+          "className": "mw-list",
+          "items": {
+            "path": "/database/route_gate/unresolved_questions"
+          }
+        },
+        {
+          "id": "hard-stop",
+          "component": "Text",
+          "className": "mw-hard-stop",
+          "text": {
+            "path": "/database/route_gate/hard_stop"
+          }
+        },
+        {
+          "id": "method",
+          "component": "Details",
+          "className": "mw-disclosure mw-method",
+          "summary": "Scoring method and qualifications",
+          "children": [
+            "rubric-map",
+            "threshold-note",
+            "diligence-note",
+            "quarantine-note"
+          ]
+        },
+        {
+          "id": "rubric-map",
+          "component": "Text",
+          "className": "mw-route-text",
+          "text": {
+            "path": "/database/rubric/mapping"
+          }
+        },
+        {
+          "id": "threshold-note",
+          "component": "Text",
+          "className": "mw-route-text",
+          "text": {
+            "path": "/database/rubric/threshold_note"
+          }
+        },
+        {
+          "id": "diligence-note",
+          "component": "Text",
+          "className": "mw-route-text",
+          "text": {
+            "path": "/database/rubric/reasonable_diligence"
+          }
+        },
+        {
+          "id": "quarantine-note",
+          "component": "Text",
+          "className": "mw-route-text",
+          "text": {
+            "path": "/database/quarantine_note"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9",
+    "updateDataModel": {
+      "surfaceId": "mr-wolf-index",
+      "path": "/",
+      "value": {}
+    }
+  }
+]
