@@ -2,7 +2,9 @@
 
 Canonical source: `unclehowell/cedwyn-mr-wolf` (split-repo mode, 5 November 2026). The legacy `section/mr-wolf` branch in `unclehowell/cedwyn` is a compatibility mirror used by the consolidated Cedwyn build.
 
-## Web interface v2.2.0
+## Web interface v2.3.0
+
+Mr Wolf loads the shared Cedwyn header (webapp 40 of 59), site navigation, language and day/night controls. Content styling follows the common Barlow typography, parchment day / black night shell and site accent palette. Nested progressive disclosure is retained from v2.2.0.
 
 The compact leaderboard uses nested native disclosure panels. Each lead opens to its context, four individually expandable proof gates, next action and source records. The procedural route and scoring method are also progressively disclosed. Keyboard operation and reduced-motion preferences are supported.
 
@@ -26,6 +28,6 @@ CPR 52.30 is a distinct case-wide route, not part of the individual *Takhar* sco
 
 Cloudflare Pages project `cedwyn-mr-wolf` is Git-connected to this repository and automatically generates pull-request previews, posting a URL in the Cloudflare integration comment. The preview is isolated from the consolidated Cedwyn production project.
 
-For full-site context, the v2.2.0 app is also staged on `staging/mr-wolf-v2.1.0-preview` in `unclehowell/cedwyn` and deployed through its existing Pages project. This secondary snapshot is separate from the split-app PR and must be refreshed when the PR content changes.
+For full-site context, the v2.3.0 app is also staged on `staging/mr-wolf-v2.1.0-preview` in `unclehowell/cedwyn` and deployed through its existing Pages project. This secondary snapshot is separate from the split-app PR and must be refreshed when the PR content changes.
 
 On merge to `main`, Cedwyn's split-repository synchronisation copies the app to legacy `section/mr-wolf`; the consolidated site's section pin/build remains a separate release step. Do not edit the old mirror branch directly.

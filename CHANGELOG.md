@@ -1,5 +1,13 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.3.0] - 2026-11-06
+### Changed
+- Load the shared Cedwyn header and theme from the canonical site origin so the standalone PR preview receives the same navigation and day/night controls as the other webapps.
+- Set Mr Wolf page identity explicitly for the shared header (webapp 40 of 59).
+- Align typography, card surfaces, borders and signature colours with the shared Barlow / Cedwyn day-night design system.
+- Preserve the v2.2.0 nested progressive-disclosure interface and the v2.1.0 legal scoring unchanged.
+
+
 ## [2.2.0] - 2026-11-05
 ### Changed
 - Replaced long, always-visible lead details with compact score cards and progressive disclosure.
