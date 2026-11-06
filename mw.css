@@ -1,4 +1,4 @@
-/* Mr Wolf · webapp 40 of 59 · v2.3.0 · Cedwyn shared shell */
+/* Mr Wolf · webapp 40 of 59 · v2.4.0 · A2UI data surface */
 :root{--ghf-p:#1C2E5C;--ghf-s:#FFB27A;--bg:var(--ghf-day,#f7f2e7);--card:var(--ghf-day-2,#fbf8f1);--ink:#1d2733;--mute:#64717d;--line:#e1e5ea;--acc:var(--ghf-accent,var(--ghf-p));--fill:var(--ghf-s);--th:var(--ghf-p)}
 .mw *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink)}
 body.mw{font:16px/1.55 var(--ghf-font,Barlow,"Helvetica Neue",Arial,system-ui,sans-serif);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
@@ -64,3 +64,30 @@ body.mw{font:16px/1.55 var(--ghf-font,Barlow,"Helvetica Neue",Arial,system-ui,sa
 .mw-rub{padding-left:22px}.mw-note{font:13px/1.5 system-ui,sans-serif;color:var(--mute)}
 footer.mw-foot{margin-top:30px;font:13px system-ui,sans-serif;color:var(--mute)}
 @media (max-width:420px){.mw-limbs{grid-template-columns:1fr}}
+
+/* A2UI output v2.4.0: one reusable card template over backend rows. */
+.mw-rows{display:grid;gap:12px;margin:0;padding:0}
+.mw-row{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--ghf-radius,6px);padding:12px}
+.mw-row .a2-card-h{display:block;margin:0 0 6px;font-size:18px;line-height:1.25;font-weight:500;color:var(--ink)}
+.mw-row .a2-kicker{display:block;margin-bottom:4px;color:var(--mute);font:12px/1.4 var(--ghf-font,Barlow,Arial,sans-serif);letter-spacing:.04em}
+.mw-row .a2-meta{display:flex;flex-wrap:wrap;gap:7px 14px;margin:4px 0 8px;color:var(--mute);font:12px/1.4 var(--ghf-font,Barlow,Arial,sans-serif)}
+.mw-row .a2-meta-i{display:inline-block}
+.mw-row .a2-l{font-weight:650;color:var(--mute)}
+.mw-row .a2-card-b{margin:7px 0 8px;font-size:15px;line-height:1.48}
+.mw-row .a2-card-f{margin:5px 0 0;font:12px/1.45 var(--ghf-font,Barlow,Arial,sans-serif);color:var(--mute)}
+.mw-status{display:inline-block;border:1px solid var(--line);padding:2px 7px;border-radius:var(--ghf-radius,6px);font:12px/1.4 var(--ghf-font,Barlow,Arial,sans-serif);color:var(--mute)}
+.mw-limbs{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 10px}
+.mw-score-chip{display:inline-block;background:rgba(100,113,125,.10);border:1px solid var(--line);border-radius:4px;padding:3px 6px;font:12px/1.25 var(--ghf-font,Barlow,Arial,sans-serif);color:var(--ink)}
+.mw-bar{position:relative;display:block;height:8px;margin:8px 0 13px;background:rgba(100,113,125,.12);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.mw-meter-fill{display:block;height:100%;background:var(--ghf-s);border-radius:5px}
+.mw-score-meter .mw-meter-fill{background:var(--ghf-p)}
+.mw-progress-meter .mw-meter-fill{background:var(--ghf-s)}
+.mw-route,.mw-method{margin-top:18px}
+.mw-route-text{font-size:14px;line-height:1.5;color:var(--mute)}
+.mw-list{padding-left:20px;font-size:14px}
+.mw-hard-stop{border-left:3px solid var(--ghf-s);padding:8px 10px;background:var(--card);font-weight:600}
+.mw-record-list{margin:4px 0}
+.mw-record-list li{margin:3px 0}
+.mw-source-section>h2{display:none}
+.mw-gate-body{margin:6px 0 0}
+@media(max-width:420px){.mw-row{padding:10px}.mw-row .a2-meta{gap:4px 10px}}

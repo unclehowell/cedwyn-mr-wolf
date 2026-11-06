@@ -1,5 +1,15 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.4.0] - 2026-11-06
+### Changed
+- Removed the duplicate title, tagline, generic explainer and case disclaimer; the shared Cedwyn header supplies the page title.
+- Replaced hard-coded per-lead markup with an A2UI v0.9 template repeated over the backend rows.
+- Added a validated build that treats leaderboard.json as the source database and publishes /_db/view.json, /_db/leaderboard.json and /_ui/index.surface.a2ui.json.
+- The initial data view shows each lead's score, weakest-gate progress and four individual limb values; explanations, next actions and source records expand within each card.
+- The procedural route and scoring qualifications are rendered from the same backend dataset.
+- Build checks unique row IDs, score arithmetic, limb bounds and weakest-limb progress; no legal score or conclusion changed.
+
+
 ## [2.3.0] - 2026-11-06
 ### Changed
 - Load the shared Cedwyn header and theme from the canonical site origin so the standalone PR preview receives the same navigation and day/night controls as the other webapps.

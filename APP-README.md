@@ -2,9 +2,13 @@
 
 Canonical source: `unclehowell/cedwyn-mr-wolf` (split-repo mode, 5 November 2026). The legacy `section/mr-wolf` branch in `unclehowell/cedwyn` is a compatibility mirror used by the consolidated Cedwyn build.
 
-## Web interface v2.3.0
+## Web interface v2.4.0
 
-Mr Wolf loads the shared Cedwyn header (webapp 40 of 59), site navigation, language and day/night controls. Content styling follows the common Barlow typography, parchment day / black night shell and site accent palette. Nested progressive disclosure is retained from v2.2.0.
+The page body begins directly with the leaderboard. The shared Cedwyn header supplies the title and navigation; no duplicate H1, tagline, kicker or introductory disclaimer is rendered.
+
+The UI is a declarative A2UI v0.9 surface (`_ui/index.a2ui.json`) over `leaderboard.json`. `scripts/build.py` validates the backend and binds it to a reusable lead-card template. The build publishes `/_db/view.json`, `/_db/leaderboard.json` and `/_ui/index.surface.a2ui.json`. Add or update a row in the backend; the repeated card template renders it without per-lead HTML changes. The consolidated Cedwyn site consumes the same data contract through `data/views/mr-wolf.view.json`.
+
+Mr Wolf loads the shared Cedwyn header (webapp 40 of 59), site navigation, language and day/night controls. Content styling follows the common Barlow typography, parchment day / black night shell and site accent palette. Nested progressive disclosure is retained and populated from backend fields.
 
 The compact leaderboard uses nested native disclosure panels. Each lead opens to its context, four individually expandable proof gates, next action and source records. The procedural route and scoring method are also progressively disclosed. Keyboard operation and reduced-motion preferences are supported.
 
