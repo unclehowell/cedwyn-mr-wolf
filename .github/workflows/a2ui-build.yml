@@ -1,0 +1,49 @@
+name: Mr Wolf A2UI build
+
+on:
+  push:
+    branches: [legal-threshold-v2.1.0-preview]
+    paths:
+      - 'leaderboard.json'
+      - '_ui/**'
+      - 'tools/**'
+      - 'scripts/**'
+      - 'mw.css'
+      - '.github/workflows/a2ui-build.yml'
+  pull_request:
+    paths:
+      - 'leaderboard.json'
+      - '_ui/**'
+      - 'tools/**'
+      - 'scripts/**'
+      - 'mw.css'
+      - '.github/workflows/a2ui-build.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check Python syntax
+        run: python -m py_compile tools/a2ui_render.py scripts/build.py
+      - name: Validate backend and render A2UI surface
+        run: python scripts/build.py
+      - name: Verify generated database and surface
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          model = json.loads(Path('dist/_db/view.json').read_text())
+          surface = json.loads(Path('dist/_ui/index.surface.a2ui.json').read_text())
+          assert len(model['database']['rows']) == 15
+          assert len(surface) >= 3
+          assert Path('dist/index.html').is_file()
+          assert not any(x in Path('dist/index.html').read_text() for x in ("What's the time, Mr Wolf?", "Our case, prospective"))
+          print('A2UI surface and generated database verified')
+          PY

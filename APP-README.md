@@ -1,13 +1,37 @@
 # Mr Wolf — webapp 40 of 59
 
-"What's the time, Mr Wolf?" Served at /mr-wolf/ on cedwyn.bucklerfamily.estate from the snapshot branch `section/mr-wolf`
-(pinned in `sections.lock` on main; themes.json id `mr-wolf`).
+Canonical source: `unclehowell/cedwyn-mr-wolf` (split-repo mode, 5 November 2026). The legacy `section/mr-wolf` branch in `unclehowell/cedwyn` is a compatibility mirror used by the consolidated Cedwyn build.
 
-A leaderboard of the leads closest to the Takhar threshold for reopening BP Properties Ltd v Buckler (1987). Each lead is
-scored 0–200: four limbs (dishonesty or concealment shown; operative cause of the 1987 outcome; not available then with
-reasonable diligence; evidence quality and admissibility), each 0–50. 100 = threshold plausibly met; 200 = proved beyond
-doubt on every limb. Limbs come from the reopen research's 0–5 limb scores x10; rows marked seed_score wait for a test.
+## Web interface v2.4.0
 
-Data: `leaderboard.json` (schema cedwyn_mr_wolf_leaderboard/v1). `index.html` is rendered from it; when a score changes,
-update the JSON, re-render, bump VERSION and CHANGELOG. Our case, prospective, not a finding of any court.
-Background #f7f2e7 / #fbf8f1, no outbound links, 390 px mobile first, scope tag data-scope="online".
+The page body begins directly with the leaderboard. The shared Cedwyn header supplies the title and navigation; no duplicate H1, tagline, kicker or introductory disclaimer is rendered.
+
+The UI is a declarative A2UI v0.9 surface (`_ui/index.a2ui.json`) over `leaderboard.json`. `scripts/build.py` validates the backend and binds it to a reusable lead-card template. The build publishes `/_db/view.json`, `/_db/leaderboard.json` and `/_ui/index.surface.a2ui.json`. Add or update a row in the backend; the repeated card template renders it without per-lead HTML changes. The consolidated Cedwyn site consumes the same data contract through `data/views/mr-wolf.view.json`.
+
+Mr Wolf loads the shared Cedwyn header (webapp 40 of 59), site navigation, language and day/night controls. Content styling follows the common Barlow typography, parchment day / black night shell and site accent palette. Nested progressive disclosure is retained and populated from backend fields.
+
+The compact leaderboard uses nested native disclosure panels. Each lead opens to its context, four individually expandable proof gates, next action and source records. The procedural route and scoring method are also progressively disclosed. Keyboard operation and reduced-motion preferences are supported.
+
+## Legal-readiness model v2.1.0
+
+This is an internal evidence-readiness index for a possible freestanding fraud action under *Takhar v Gracefield Developments Ltd* [2019] UKSC 13. It is not a court-prescribed points test, legal advice, probability estimate or finding of any court.
+
+Four non-compensatory elements, each 0–50:
+1. Conscious and deliberate dishonesty.
+2. Attribution to the successful party (or a person for whom it is responsible) and actual deception of the court.
+3. Operative cause and materiality: the fraud was an operative cause and would have changed how the original court approached the evidence.
+4. Admissible proof, provenance and particulars.
+
+The internal floor requires at least 25/50 on **each** element. Raw total alone cannot pass a lead. Progress is the weakest limb divided by 25, capped at 100%; raw score remains a separate evidence index out of 200.
+
+200/200 is the owner's double-lock target (50/50 on every element, twice the internal floor). It is not literally 200% statistical probability and cannot guarantee a judicial outcome.
+
+CPR 52.30 is a distinct case-wide route, not part of the individual *Takhar* score. Its real-injustice, exceptional-circumstances and no-alternative-effective-remedy conditions remain unresolved; the app marks filing blocked pending independent advice. Reasonable diligence is not scored as a general element of a freestanding *Takhar* action, although abuse-of-process and other procedural issues remain separately relevant.
+
+## Preview and release
+
+Cloudflare Pages project `cedwyn-mr-wolf` is Git-connected to this repository and automatically generates pull-request previews, posting a URL in the Cloudflare integration comment. The preview is isolated from the consolidated Cedwyn production project.
+
+For full-site context, the v2.3.0 app is also staged on `staging/mr-wolf-v2.1.0-preview` in `unclehowell/cedwyn` and deployed through its existing Pages project. This secondary snapshot is separate from the split-app PR and must be refreshed when the PR content changes.
+
+On merge to `main`, Cedwyn's split-repository synchronisation copies the app to legacy `section/mr-wolf`; the consolidated site's section pin/build remains a separate release step. Do not edit the old mirror branch directly.
