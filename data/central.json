@@ -10,16 +10,9 @@
   "status",
   "page"
  ],
- "synced_utc": "2026-11-07T22:37:54Z",
- "count": 28,
+ "synced_utc": "2026-11-08T02:16:27Z",
+ "count": 35,
  "not_in_central": [
-  "EV-0254",
-  "EV-0263",
-  "EV-0265",
-  "EV-0285",
-  "EV-0288",
-  "EV-0291",
-  "EV-0293",
   "EV-0309",
   "EV-0331",
   "EV-0341",
@@ -271,6 +264,69 @@
    "date_sort": "1965",
    "status": "HELD",
    "page": "/research/evidence/ev-0216-1965-contract-condition-f-conveyance-25-december-1938/"
+  },
+  "EV-0254": {
+   "id": "EV-0254",
+   "kind": "evidence",
+   "title": "The National Archives MAF 11/55/5333: Order of exchange of lands, Llandough, Glamorgan, 11 September 1879 (parties Major H H Lee and T R Thompson)",
+   "date_display": "11 September 1879",
+   "date_sort": "1879-09-11",
+   "status": "SOURCE PENDING (not seen)",
+   "page": "https://research.bucklerfamily.estate/evidence/ev-0254-tna-maf-11-55-5333-llandough-exchange-of-lands-1879/"
+  },
+  "EV-0263": {
+   "id": "EV-0263",
+   "kind": "evidence",
+   "title": "Commons Registration Act 1965 s.5 and SI 1968/989: registrations were publicised by public notice only; Glamorgan County Council’s London Gazette notices of 22 October 1968 and 24 October 1969; second objection period for VG41 ran 1 May 1970 – 31 July 1972",
+   "date_display": "1968–1972 (objection period ended 31 July 1972)",
+   "date_sort": "1972-07-31",
+   "status": "HELD (texts read 19 Oct 2026); the 1970 Glamorgan second-period notice listing VG41 NOT FOUND (Gazette OCR)",
+   "page": "https://research.bucklerfamily.estate/evidence/ev-0263-commons-registration-1965-publicity-glamorgan-notices-vg41/"
+  },
+  "EV-0265": {
+   "id": "EV-0265",
+   "kind": "evidence",
+   "title": "Registration background: compulsory registration of title began in the Vale of Glamorgan on 1 December 1975 (SI 1975/160); the solicitor’s certificate on first registration (LRR 1925 r.29; 1989 text); the HMLR “about to be registered” Gazette notices ran only to about May 1975",
+   "date_display": "1 December 1975 (compulsory registration)",
+   "date_sort": "1975-12-01",
+   "status": "HELD (texts read 16–19 Oct 2026); the 1983 Form 1C and r.29 wording as used in Feb 1983 NOT SEEN",
+   "page": "https://research.bucklerfamily.estate/evidence/ev-0265-hmlr-registration-background-compulsory-1975-r29-certificate/"
+  },
+  "EV-0285": {
+   "id": "EV-0285",
+   "kind": "evidence",
+   "title": "Western Mail search-result snippets, 1925–1939: “damages in respect of losses by dogs worrying sheep was claimed by Mr. John Williams, Great House Farm, Llandough” (26 Mar 1925, p.4); “PONY, 12.2, ride or drive; best offer.— Great House Farm, Llandough, near Penarth” (8 and 9 Jun 1937, p.3); “LOST from Great House Farm, Twelve-bore Gun; number known.—Williams, Llandough” (6 Feb 1939, p.2)",
+   "date_display": "26 March 1925; 8–9 June 1937; 6 February 1939",
+   "date_sort": "1925-03-26",
+   "status": "SOURCE PENDING (snippets read 21 Oct 2026; full pages not read)",
+   "page": "https://research.bucklerfamily.estate/evidence/ev-0285-snippets-only-western-mail-1925-1939-naming-great-house-farm-llandough-john-willia/"
+  },
+  "EV-0288": {
+   "id": "EV-0288",
+   "kind": "evidence",
+   "title": "Press search snippets, Nov 1968 – Feb 1969: Amalgamated Investment & Property bids for Western Ground Rents (Nov 1968); a counter-bid (Jan 1969); the WGR board favours Great Portland Estates (8 Feb 1969); British Petroleum makes an agreed cash bid of 17s a share, about £18–19 million, on 15 Feb 1969, to pass WGR’s properties “on to the” BP pension fund; Amalgamated’s offer lapses (18 Feb 1969)",
+   "date_display": "19 November 1968 – 18 February 1969",
+   "date_sort": "1968-11-19",
+   "status": "SOURCE PENDING (snippets read 21 Oct 2026)",
+   "page": "https://research.bucklerfamily.estate/evidence/ev-0288-snippets-only-press-on-the-1968-69-takeover-battle-for-western-ground-rents-ltd-en/"
+  },
+  "EV-0291": {
+   "id": "EV-0291",
+   "kind": "evidence",
+   "title": "National Library of Wales, Bute Estate Records: catalogue entries D153/1–8 (Llandough) and D242/1–27, D247/1–69, D258/1–110 (Pwllypant estate, p. Eglwysilan)",
+   "date_display": "D153: 1811–1912 · D242: 1775–1921 · D247: 1723–1895 · D258: 1867–1877 (catalogue dates)",
+   "date_sort": "1811",
+   "status": "HELD (catalogue text, read online 21 Oct 2026); the deeds and the plan on D153/4 SOURCE PENDING",
+   "page": "https://research.bucklerfamily.estate/evidence/ev-0291-nlw-bute-catalogue-d153-llandough-33-acres-great-house-farm-limeworks-and-pwllypant-d242-d247-d258/"
+  },
+  "EV-0293": {
+   "id": "EV-0293",
+   "kind": "evidence",
+   "title": "The 1994 excavation north of St Dochdwy’s: the HER records, the published report, the Museum Wales accession and Burial 631",
+   "date_display": "1994 (excavation); 28 Jul 1994 (donation); 2005 (published report); 2 May 2007 (museum article); HER record compiled 12 Mar 2004, updated 24 Aug 2024",
+   "date_sort": "1994-07-28",
+   "status": "HELD (public online records, read 21 Oct 2026). Cotswold Archaeological Trust Report 94213 and the 2005 full text: see the Archaeology and Heritage page.",
+   "page": "https://research.bucklerfamily.estate/evidence/ev-0293-llandough-1994-cemetery-excavation-her-ggat02272s-museum-wales-95-56h-burial-631/"
   },
   "EV-0645": {
    "id": "EV-0645",
