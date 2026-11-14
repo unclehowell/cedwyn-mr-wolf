@@ -1,5 +1,15 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.3.0] - 2026-11-14
+### Changed
+- Diligence pass (issue #14): every lead re-audited against the 1987 judgment text, Takhar [2019] UKSC 13 and RBS v Highland [2013] EWCA Civ 328 [106]. Default order is now **Strongest**: reach to the one finding the 1987 result rests on (limb 2), then what is new (limb 3), then evidence held. The owner's order stays as **Our framework**.
+- Each route (Dishonesty, Concealment, Public bodies) is ranked on its own and shows its legal test. Public-body leads are labelled by the remedy they point to (rectification, Ombudsman, Information Commissioner) rather than inflating the reopening scale.
+- Each lead shows what evidence is held, its route to a remedy, and the next record with who holds it.
+- Rescored: MW-05 70→80, MW-03 60→70, MW-10 30→60 (Cadw gives no destruction date for CL72/381; after 1987), MW-01 40 (cause 0: 1939 plan shows Parcel B only, A-032), MW-16 50→40, MW-17 limb 3 lowered (the judgment mentions television support), MW-04 10→20 (labelled a hypothesis), MW-15 10→20.
+- Fixes: 1982 woodland registration was a BP-to-BP conveyance of 19 Nov 1982 with no council party (HM Land Registry, 23 Mar 2026); MW-11 labels her reply as the family's account and links the 19 Sep 1974 step; 100 relabelled as our triage line, not a legal test.
+### Added
+- MW-19 what BP told the court about her stance after the letters; MW-20 Companies House and The National Archives disagree on the Western Ground Rents files; MW-21 the 1974 county court files.
+
 ## [2.2.0] - 2026-11-14
 ### Added
 - Leaderboard order toggle: **Our case** (default; the family's framework order, `priority` field) and **Threshold score**. Gauges always use the score (issue #12).
