@@ -1,5 +1,13 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.1.0] - 2026-11-14
+### Changed
+- Lead #1 (MW-11) rewritten around our argument (owner feedback, issue #9): every attempt to make her occupation permissive was refused or left unsigned (1949, 1954, 1955 ambiguity, 1959, 1965), she pleaded ownership in July 1974, and the family record is that she wrote back after the 1974 letters. Records widened to the whole chain. Scores unchanged.
+- Limb 3 relabelled "New: not raised and decided in 1987" to match Takhar v Gracefield [2019] UKSC 13.
+### Added
+- `argument` field per lead (1987 court vs our case, then dated steps with record and state), shown as a timeline at the top of the lead modal.
+- Each lead modal states why it ranks where it does: limb 2 (goes to the reason BP won) vs proof of deception held today.
+
 ## [2.0.1] - 2026-11-14
 ### Fixed
 - Data files are read with literal fetch('leaderboard.json'), fetch('routes.json') and fetch('data/central.json') calls, so the estate build (dbserve FETCHLIT) keeps them as plain files. Root JSON files otherwise answer 404 live without the service worker.

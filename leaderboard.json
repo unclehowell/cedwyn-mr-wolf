@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn_mr_wolf_leaderboard/v1",
- "version": "1.0.0",
- "updated": "2026-11-01",
+ "version": "2.1.0",
+ "updated": "2026-11-14",
  "slot": 40,
  "of": 59,
  "threshold": 100,
@@ -20,7 +20,7 @@
    },
    {
     "key": "c",
-    "label": "Not available then with reasonable diligence",
+    "label": "New: not raised and decided in 1987",
     "max": 50
    },
    {
@@ -31,7 +31,8 @@
   ],
   "mapping": "Each limb comes from the reopen research score 0-5 on the same limb, times 10 (0=nothing, 1=inference or gap, 2=several documented facts, 3=a primary official record shows the anomaly, 4=a primary document proves the limb, 5=admissible originals ready for counsel). Total = sum of the four limbs, 0-200.",
   "threshold_note": "100 = the Takhar threshold plausibly met; 200 = proved beyond doubt on every limb. Ready for counsel needs at least 40 on every limb.",
-  "order": "Score high to low; ties by limb 2 (operative cause), then limb 3."
+  "order": "Score high to low; ties by limb 2 (operative cause), then limb 3.",
+  "limb3_note": "Takhar v Gracefield Developments Ltd [2019] UKSC 13: a party who shows a judgment was obtained by deception need not show it could not have been found with reasonable diligence at the time; the position differs where the point was raised and decided at trial. Limb 3 measures that."
  },
  "source": {
   "reopen_grounds_run": 59,
@@ -43,7 +44,7 @@
   {
    "rank": 1,
    "id": "MW-11",
-   "title": "The licence letters rejected in writing?",
+   "title": "She never accepted permission: 1949–1974 refusals and her reply to the licence letters",
    "score": 80,
    "limbs": {
     "a": 10,
@@ -59,29 +60,109 @@
    },
    "reopen_ground": "R2",
    "seed_score": false,
-   "what": "The decisive finding was that Mary (Nancy) Williams never told BP she rejected the 1974 letters ('she did not, however, do that'). A written rejection, if BP held one while its case said there was none, would go to the heart of the decision.",
+   "what": "The 1987 decision turned on one finding: that Mary (Nancy) Williams never told BP she rejected the 31 October 1974 licence letters. Our case is the opposite. Every attempt to make her occupation permissive was refused or left unsigned, she pleaded ownership in July 1974, and the family record is that she wrote back after the letters. If that reply existed and the court was told there was none, the decisive finding rests on a withheld record.",
    "why": {
-    "a": "None yet. It would need BP to have held a written rejection while its case said there was none.",
-    "b": "The court wrote that the result 'may' have been different had she plainly told BP she did not accept the letters.",
-    "c": "The cutting cited as a '1978 article' is the Daily Telegraph of 16 April 1974, six months before the letters, so not a rejection.",
-    "d": "No communication to BP after 4 November 1974 has been found."
+    "a": "None held yet. Rises when her reply, or BP's 1984–86 list of documents, shows a rejection the court was told did not exist.",
+    "b": "This is the reason BP won: the court wrote that the result 'may' have been different had she plainly told BP she did not accept the letters.",
+    "c": "The reply was not before the court. The 1959 and 1965 refusals were, but the full chain (1949, 1954, the 1955 land) was not argued.",
+    "d": "No communication to BP after 4 November 1974 is held yet; the 1959 and 1965 refusals are known through the judgment."
    },
-   "what_would_raise_it": "Any letter from her or her 1974 solicitors to BP Pension Trust, BP Properties or Linklaters & Paines between 4 November 1974 and 26 March 1983, or BP's list of documents in the 1984–86 action.",
-   "status": "Open: letter being traced",
+   "what_would_raise_it": "Her reply, or her 1974 solicitors' letters to BP Pension Trust, BP Properties or Linklaters & Paines (4 November 1974 to 26 March 1983); BP's list of documents in the 1984–86 action; the 1959 and 1965 offer files; the 1955 order and its plan.",
+   "status": "Open: reply being traced",
    "records": [
     {
-     "id": "EV-0645",
-     "href": "/research/evidence/ev-0645-local-history-book-llandough-penarth-pp64-65/"
+     "id": "GHF-E122",
+     "href": "/research/evidence-library/ghf-e122-1949-surrender-and-re-grant-of-frederick-bucklers-tenancy/"
     },
     {
-     "id": "EV-0048",
-     "href": "/research/evidence/ev-0048-telegraph-open-day-ancient-house/"
+     "id": "EV-0031",
+     "href": "/research/evidence/ev-0031-1954-buckler-tenancy-attempt/"
+    },
+    {
+     "id": "EV-0032",
+     "href": "/research/evidence/ev-0032-1955-order-14-possession-order/"
+    },
+    {
+     "id": "EV-0039",
+     "href": "/research/evidence/ev-0039-wgr-tenancy-offers-1959-1965/"
+    },
+    {
+     "id": "EV-0049",
+     "href": "/research/evidence/ev-0049-mary-williams-plea-ownership-pleadings/"
+    },
+    {
+     "id": "EV-0050",
+     "href": "/research/evidence/ev-0050-1974-bp-licence-letters/"
     },
     {
      "id": "EV-0080",
      "href": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/"
+    },
+    {
+     "id": "EV-0645",
+     "href": "/research/evidence/ev-0645-local-history-book-llandough-penarth-pp64-65/"
     }
-   ]
+   ],
+   "argument": {
+    "court": "The Court of Appeal held that the 1974 letters made her a licensee from the day she received them, because she never told BP she rejected them.",
+    "ours": "Her answer to permission was always no. The letters were one more attempt in a 25-year chain, and she answered that one too.",
+    "steps": [
+     {
+      "date": "1949",
+      "event": "Surrender and re-grant of Frederick Buckler's tenancy; the 1939 plan shows it covered Parcel B, not the house parcel",
+      "state": "Record held",
+      "rec": "GHF-E122"
+     },
+     {
+      "date": "1954",
+      "event": "Further attempt to make Frederick a tenant",
+      "state": "Not taken up",
+      "rec": "EV-0031"
+     },
+     {
+      "date": "1955",
+      "event": "Possession order and 4 July execution: which land it covered is unclear; woodland and green taken, house kept",
+      "state": "Ambiguous",
+      "rec": "EV-0032"
+     },
+     {
+      "date": "1959",
+      "event": "Tenancy offer for the farmhouse and garden",
+      "state": "Refused",
+      "rec": "EV-0039"
+     },
+     {
+      "date": "1965",
+      "event": "Weekly tenancy offer for the farmhouse and garden",
+      "state": "Never signed, no rent paid",
+      "rec": "EV-0039"
+     },
+     {
+      "date": "3 Jul 1974",
+      "event": "Her plea of ownership in BP's county-court action; the action was adjourned",
+      "state": "Ownership asserted",
+      "rec": "EV-0049"
+     },
+     {
+      "date": "31 Oct 1974",
+      "event": "Licence letters from BP Pension Trust and BP Properties",
+      "state": "Sent",
+      "rec": "EV-0050"
+     },
+     {
+      "date": "After Nov 1974",
+      "event": "Her written reply to the letters (family record)",
+      "state": "Being traced",
+      "rec": ""
+     },
+     {
+      "date": "1984–87",
+      "event": "BP's case and the court: no rejection of the letters",
+      "state": "Decisive finding",
+      "rec": "EV-0080"
+     }
+    ]
+   }
   },
   {
    "rank": 2,
