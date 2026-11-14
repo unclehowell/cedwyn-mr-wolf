@@ -1,4 +1,4 @@
-/* Mr Wolf v2.1.0 · gauge dashboard, built in the browser from leaderboard.json, routes.json and data/central.json.
+/* Mr Wolf v2.2.0 · gauge dashboard, built in the browser from leaderboard.json, routes.json and data/central.json.
    New scores appear on the next page load with no page edit. Our case, prospective, not a finding of any court. — Claude agent */
 (function () {
   'use strict';
@@ -60,6 +60,7 @@
     var L = res[0], RT = res[1], C = res[2].items || {};
     var THR = L.threshold, MAX = L.max, LIMBS = L.rubric.limbs, ROUTES = RT.routes;
     var rows = L.rows.slice().sort(function (a, b) { return a.rank - b.rank; });
+    var byCase = L.rows.slice().sort(function (a, b) { return (a.priority || 99) - (b.priority || 99) || a.rank - b.rank; });
     rows.forEach(function (r) { r.routes = RT.tags[r.id] || []; });
     var best = rows[0], gap = THR - best.score;
     var atThr = rows.filter(function (r) { return r.score >= THR; });
@@ -100,7 +101,8 @@
       return '<button type="button" class="chip" data-open="' + c[0] + '"><b>' + c[1] + '</b>' + E(c[2]) + '</button>';
     }).join('');
 
-    var trs = rows.map(function (r) {
+    var TR = {};
+    rows.forEach(function (r) {
       var limbs = LIMBS.map(function (lb) {
         return '<div class="lm"><div class="lm-h"><span>' + E(lb.label) + '</span><b>' + r.limbs[lb.key] + '/' + lb.max + '</b></div>' +
           bar(r.limbs[lb.key], lb.max, COUNSEL) + '<p>' + E(r.why[lb.key]) + '</p></div>';
@@ -119,7 +121,7 @@
               (hit ? ' <a href="' + E(hit.href) + '">' + E(st.rec) + '</a>' : '') + '</span><span class="tl-s">' + E(st.state) + '</span></li>';
           }).join('') + '</ol></div>';
       }
-      var rank = '<p class="m-why"><b>Why #' + r.rank + ':</b> ' + (r.limbs.b >= 40 ? 'it goes to the reason BP won (limb 2: ' + r.limbs.b + '/50)' : 'limb 2 (reason BP won): ' + r.limbs.b + '/50') +
+      var rank = '<p class="m-why"><b>' + (r.priority ? 'Our case #' + r.priority + ' · ' : '') + 'Score rank #' + r.rank + ':</b> ' + (r.limbs.b >= 40 ? 'it goes to the reason BP won (limb 2: ' + r.limbs.b + '/50)' : 'limb 2 (reason BP won): ' + r.limbs.b + '/50') +
         '; proof of deception held today: ' + r.limbs.a + '/50.</p>';
       var routes = ROUTES.filter(function (rt) { return r.routes.indexOf(rt.key) > -1; }).map(function (rt) { return rt.label; }).join(' · ');
       dialog('L-' + r.id, E(r.title),
@@ -127,11 +129,17 @@
         (r.score >= THR ? 'Threshold reached' : (THR - r.score) + ' short of ' + THR) + '</p><p class="m-st">' + E(r.status) + '</p><p class="m-rt">' + E(routes) + '</p></div></div>' + arg +
         '<p>' + E(r.what) + '</p>' + rank + '<div class="m-raise"><h3>What would raise it</h3><p>' + E(r.what_would_raise_it) + '</p></div>' +
         '<h3>The four limbs</h3>' + limbs + (r.seed_score ? '<p class="m-note">Seed score, waiting for its first test in our reopen research.</p>' : '') +
-        '<h3>Records</h3>' + recs, '#' + r.rank + ' · ' + E(r.id));
-      return '<tr data-open="L-' + E(r.id) + '" tabindex="0"><td class="rk">' + r.rank + '</td><td class="ld">' + E(r.title) + bar(r.score, MAX, THR) +
-        '</td><td class="n"><b>' + r.score + '</b></td></tr>';
-    }).join('');
+        '<h3>Records</h3>' + recs, (r.priority ? 'Our case #' + r.priority : '#' + r.rank) + ' · ' + E(r.id));
+      TR[r.id] = function (n) {
+        return '<tr data-open="L-' + E(r.id) + '" tabindex="0"><td class="rk">' + n + '</td><td class="ld">' + E(r.title) + bar(r.score, MAX, THR) +
+          '</td><td class="n"><b>' + r.score + '</b></td></tr>';
+      };
+    });
+    function body(mode) {
+      return (mode === 'score' ? rows : byCase).map(function (r, i) { return TR[r.id](i + 1); }).join('');
+    }
 
+    dialog('I-order', 'Two orders', '<p>' + E(L.priority_note || '') + '</p>' + list(byCase.slice(0, 6)));
     dialog('I-how', 'How the score works',
       '<p>Four limbs, 0–50 each, add up to ' + MAX + '. <b>' + THR + '</b> = Takhar threshold plausibly met. <b>' + MAX + '</b> = proved on every limb. ' +
       'Ready for counsel = at least ' + COUNSEL + ' on every limb.</p><ol>' + LIMBS.map(function (lb) { return '<li>' + E(lb.label) + ' (0–' + lb.max + ')</li>'; }).join('') +
@@ -144,7 +152,15 @@
       '<div class="chips">' + chipHtml + '</div>' +
       '<h2 class="sec">Routes</h2><div class="grid g3">' + routeCards + '</div>' +
       '<h2 class="sec">Limbs <span>· mark at ' + COUNSEL + ' = counsel-ready</span></h2><div class="grid g4">' + limbCards + '</div>' +
-      '<section id="leaderboard"><h2 class="sec">Leaderboard</h2><table class="lb"><thead><tr><th>#</th><th>Lead</th><th>Score</th></tr></thead><tbody>' + trs + '</tbody></table></section>';
+      '<section id="leaderboard"><div class="lb-h"><h2 class="sec">Leaderboard</h2><div class="seg" role="group" aria-label="Order">' +
+      '<button type="button" data-sort="case" aria-pressed="true">Our case</button><button type="button" data-sort="score" aria-pressed="false">Threshold score</button>' +
+      '<button type="button" class="seg-i" data-open="I-order" aria-label="About the order">i</button></div></div>' +
+      '<table class="lb"><thead><tr><th>#</th><th>Lead</th><th>Score</th></tr></thead><tbody id="mw-lb">' + body('case') + '</tbody></table></section>';
+    app.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-sort]'); if (!b) return;
+      app.querySelectorAll('[data-sort]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      document.getElementById('mw-lb').innerHTML = body(b.getAttribute('data-sort'));
+    });
     var upd = document.getElementById('mw-upd'); if (upd) upd.textContent = L.updated;
     var h = location.hash.slice(1).toUpperCase(); if (/^MW-\d+$/.test(h)) open('L-' + h);
   }).catch(function (err) {

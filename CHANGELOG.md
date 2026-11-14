@@ -1,5 +1,14 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.2.0] - 2026-11-14
+### Added
+- Leaderboard order toggle: **Our case** (default; the family's framework order, `priority` field) and **Threshold score**. Gauges always use the score (issue #12).
+- New leads: MW-16 the 12-year paper playbook at HM Land Registry; MW-17 1974 TV footage of Mary (Nancy) Williams, never before the 1987 court; MW-18 the 1988 footage's release timing.
+### Changed
+- MW-01: family heirlooms hold John Williams's own signature; lead reframed as the signature comparison and the start of the 1939 → 1952 → 1955 → 1962 chain; rescored 20 → 40.
+- MW-11: corrected to the judgment's own words (EG [1987] 2 EGLR 168 pp.170–171): letters sent to her solicitor and received the morning of 4 Nov 1974; execution stayed "pending Mrs Buckler's agreement"; warrant withdrawn "before she had given any instructions"; BP "neither sought nor waited for her acceptance". Family-archive points labelled; later authority (Smith v Molyneaux 2016, Brown v Ridley 2024) added.
+- MW-04: reframed to include the 1962 order built on the 1955 order's ambiguity.
+
 ## [2.1.1] - 2026-11-14
 ### Changed
 - MW-11: the 1974 squeeze added to the argument timeline (owner addition, issue #9). Letters dated 31 Oct 1974, the first day the warrant could be enforced; execution stayed 4 Nov; warrant withdrawn by 25 Nov, leaving her appeal and her July 1974 ownership plea undecided. Our case: no time and no forum to answer. Scores unchanged.
