@@ -1,7 +1,7 @@
 {
  "site": "mr-wolf",
- "version": "1.0.0",
- "updated": "2026-11-01",
+ "version": "2.0.0",
+ "updated": "2026-11-14",
  "note": "Interface strings only. Leaderboard text stays in English, the authoritative record; Welsh and Spanish translation pending.",
  "strings": {
   "Leaderboard": {
@@ -39,6 +39,34 @@
   "Changelog": {
    "cy": "Log newidiadau",
    "es": "Registro de cambios"
+  },
+  "Routes": {
+   "cy": "Llwybrau",
+   "es": "Vías"
+  },
+  "Limbs": {
+   "cy": "Elfennau",
+   "es": "Requisitos"
+  },
+  "to go": {
+   "cy": "i fynd",
+   "es": "por delante"
+  },
+  "leads": {
+   "cy": "trywyddau",
+   "es": "pistas"
+  },
+  "counsel-ready": {
+   "cy": "yn barod i’r bargyfreithiwr",
+   "es": "listas para el abogado"
+  },
+  "seed scores": {
+   "cy": "sgorau cychwynnol",
+   "es": "puntuaciones iniciales"
+  },
+  "What would raise it": {
+   "cy": "Beth fyddai’n ei godi",
+   "es": "Qué la subiría"
   }
  }
 }
