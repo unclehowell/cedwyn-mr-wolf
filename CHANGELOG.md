@@ -1,5 +1,14 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.0.0] - 2026-11-14
+### Changed
+- Rebuilt as a gauge dashboard (owner brief 14 Nov 2026, issue #7): threshold gauge (best lead vs 100), route gauges (Dishonesty, Concealment, Public bodies), limb gauges (best per Takhar limb, mark at 40 = counsel-ready), chips, then the leaderboard on the landing view.
+- All longer text moved into modals (native dialog): each lead row, gauge, chip and the (i) rubric. No text removed.
+- Record chips in lead modals show date and title from data/central.json.
+### Added
+- routes.json: route tags per lead (our classification); leaderboard.json is unchanged.
+- mw.js builds every gauge, the table and the modals in the browser from leaderboard.json, routes.json and data/central.json; a score change needs only a JSON edit.
+
 ## [1.0.0] - 2026-11-01
 ### Added
 - New webapp at /mr-wolf/ (branch section/mr-wolf): "Mr Wolf", subtitle "What's the time, Mr Wolf?".
