@@ -1,4 +1,4 @@
-/* Mr Wolf v2.2.0 · gauge dashboard, built in the browser from leaderboard.json, routes.json and data/central.json.
+/* Mr Wolf v2.3.0 · gauge dashboard, built in the browser from leaderboard.json, routes.json and data/central.json.
    New scores appear on the next page load with no page edit. Our case, prospective, not a finding of any court. — Claude agent */
 (function () {
   'use strict';
@@ -60,23 +60,26 @@
     var L = res[0], RT = res[1], C = res[2].items || {};
     var THR = L.threshold, MAX = L.max, LIMBS = L.rubric.limbs, ROUTES = RT.routes;
     var rows = L.rows.slice().sort(function (a, b) { return a.rank - b.rank; });
+    var byScore = L.rows.slice().sort(function (a, b) { return b.score - a.score || b.limbs.b - a.limbs.b || a.rank - b.rank; });
     var byCase = L.rows.slice().sort(function (a, b) { return (a.priority || 99) - (b.priority || 99) || a.rank - b.rank; });
     rows.forEach(function (r) { r.routes = RT.tags[r.id] || []; });
-    var best = rows[0], gap = THR - best.score;
+    var best = byScore[0], gap = THR - best.score;
     var atThr = rows.filter(function (r) { return r.score >= THR; });
     var counsel = rows.filter(function (r) { return Math.min(r.limbs.a, r.limbs.b, r.limbs.c, r.limbs.d) >= COUNSEL; });
     var seeds = rows.filter(function (r) { return r.seed_score; });
 
     dialog('I-hero', 'Distance to the threshold',
-      '<p>The bar is crossed when <b>one lead</b> reaches ' + THR + ' of ' + MAX + '. The needle shows the best lead today: <b>' + best.score + '</b>' +
-      (gap > 0 ? ', ' + gap + ' short.' : '.') + '</p><p>Each lead is scored on the four limbs of the test for setting aside a judgment obtained by dishonesty or concealment ' +
+      '<p>Our triage line is crossed when <b>one lead</b> reaches ' + THR + ' of ' + MAX + '. The needle shows the best lead today: <b>' + best.score + '</b>' +
+      (gap > 0 ? ', ' + gap + ' short.' : '.') + ' It is <i>' + E(best.title) + '</i> (' + E(best.status) + ').</p><p>Each lead is scored on the four limbs of the test for setting aside a judgment obtained by dishonesty or concealment ' +
       '(<i>Takhar v Gracefield Developments Ltd</i> [2019] UKSC 13, adopting <i>RBS v Highland Financial Partners LP</i> [2013] EWCA Civ 328). ' +
-      THR + ' = threshold plausibly met; ' + MAX + ' = proved on every limb.</p><h3>Closest leads</h3>' + list(rows.slice(0, 5)));
+      THR + ' is our own triage line, not a legal test; ' + MAX + ' = proved on every limb. No score is a finding.</p><h3>Closest leads</h3>' + list(byScore.slice(0, 5)));
 
     var routeCards = ROUTES.map(function (rt) {
-      var rs = rows.filter(function (r) { return r.routes.indexOf(rt.key) > -1; }), top = rs.length ? rs[0].score : 0;
-      dialog('R-' + rt.key, E(rt.label), '<p>' + E(rt.desc) + '</p><p>Best lead on this route: <b>' + top + '</b> of ' + MAX + '; the bar is ' + THR + '.</p>' +
-        list(rs) + '<p class="m-note">' + E(RT.note) + '</p>', 'Route');
+      var ord = rt.order || [], pos = function (r) { var i = ord.indexOf(r.id); return i < 0 ? 99 : i; };
+      var rs = rows.filter(function (r) { return r.routes.indexOf(rt.key) > -1; }).sort(function (a, b) { return pos(a) - pos(b) || a.rank - b.rank; });
+      var top = rs.reduce(function (m, r) { return Math.max(m, r.score); }, 0);
+      dialog('R-' + rt.key, E(rt.label), '<p>' + E(rt.desc) + '</p><p>Best score on this route: <b>' + top + '</b> of ' + MAX + '; triage line ' + THR + '.</p>' + (rt.law ? '<p class="m-note">' + E(rt.law) + '</p>' : '') +
+        '<h3>Ranked for this route</h3>' + list(rs, function (r) { return r.score; }) + '<p class="m-note">' + E(RT.note) + '</p>', 'Route');
       return '<button type="button" class="card" data-open="R-' + rt.key + '">' + arc(top, MAX, THR, 's') +
         '<span class="lbl">' + E(rt.label) + '</span><span class="sm">' + rs.length + ' leads</span></button>';
     }).join('');
@@ -121,27 +124,29 @@
               (hit ? ' <a href="' + E(hit.href) + '">' + E(st.rec) + '</a>' : '') + '</span><span class="tl-s">' + E(st.state) + '</span></li>';
           }).join('') + '</ol></div>';
       }
-      var rank = '<p class="m-why"><b>' + (r.priority ? 'Our case #' + r.priority + ' · ' : '') + 'Score rank #' + r.rank + ':</b> ' + (r.limbs.b >= 40 ? 'it goes to the reason BP won (limb 2: ' + r.limbs.b + '/50)' : 'limb 2 (reason BP won): ' + r.limbs.b + '/50') +
+      var nx = r.next && r.next.record !== '—' ? '<div class="m-next"><h3>Next record</h3><p><b>' + E(r.next.record) + '</b></p><p class="m-note">Held by: ' + E(r.next.holder) + '</p></div>' : '';
+      var basis = r.basis ? '<p class="m-note"><b>Evidence held:</b> ' + E(r.basis) + (r.vehicle ? ' · <b>Route to a remedy:</b> ' + E(r.vehicle) : '') + '</p>' : '';
+      var rank = '<p class="m-why"><b>' + (r.priority ? 'Our framework #' + r.priority + ' · ' : '') + 'Strongest #' + r.rank + ':</b> ' + (r.limbs.b >= 40 ? 'it goes to the reason BP won (limb 2: ' + r.limbs.b + '/50)' : 'limb 2 (reason BP won): ' + r.limbs.b + '/50') +
         '; proof of deception held today: ' + r.limbs.a + '/50.</p>';
       var routes = ROUTES.filter(function (rt) { return r.routes.indexOf(rt.key) > -1; }).map(function (rt) { return rt.label; }).join(' · ');
       dialog('L-' + r.id, E(r.title),
         '<div class="m-hero">' + arc(r.score, MAX, THR, 'm') + '<div><p class="m-gap">' +
         (r.score >= THR ? 'Threshold reached' : (THR - r.score) + ' short of ' + THR) + '</p><p class="m-st">' + E(r.status) + '</p><p class="m-rt">' + E(routes) + '</p></div></div>' + arg +
-        '<p>' + E(r.what) + '</p>' + rank + '<div class="m-raise"><h3>What would raise it</h3><p>' + E(r.what_would_raise_it) + '</p></div>' +
+        '<p>' + E(r.what) + '</p>' + basis + rank + nx + '<div class="m-raise"><h3>What would raise it</h3><p>' + E(r.what_would_raise_it) + '</p></div>' +
         '<h3>The four limbs</h3>' + limbs + (r.seed_score ? '<p class="m-note">Seed score, waiting for its first test in our reopen research.</p>' : '') +
-        '<h3>Records</h3>' + recs, (r.priority ? 'Our case #' + r.priority : '#' + r.rank) + ' · ' + E(r.id));
+        '<h3>Records</h3>' + recs, (r.priority ? 'Our framework #' + r.priority : '#' + r.rank) + ' · ' + E(r.id));
       TR[r.id] = function (n) {
-        return '<tr data-open="L-' + E(r.id) + '" tabindex="0"><td class="rk">' + n + '</td><td class="ld">' + E(r.title) + bar(r.score, MAX, THR) +
+        return '<tr data-open="L-' + E(r.id) + '" tabindex="0"><td class="rk">' + n + '</td><td class="ld">' + E(r.title) + (r.vehicle ? '<span class="v">' + E(r.vehicle) + '</span>' : '') + bar(r.score, MAX, THR) +
           '</td><td class="n"><b>' + r.score + '</b></td></tr>';
       };
     });
     function body(mode) {
-      return (mode === 'score' ? rows : byCase).map(function (r, i) { return TR[r.id](i + 1); }).join('');
+      return (mode === 'case' ? byCase : rows).map(function (r, i) { return TR[r.id](i + 1); }).join('');
     }
 
-    dialog('I-order', 'Two orders', '<p>' + E(L.priority_note || '') + '</p>' + list(byCase.slice(0, 6)));
+    dialog('I-order', 'Two orders', '<p>' + E(L.priority_note || '') + '</p><h3>Strongest first</h3>' + list(rows.slice(0, 5)) + '<h3>Our framework first</h3>' + list(byCase.slice(0, 5)) + '<p class="m-note">' + E(L.audit_note || '') + '</p>');
     dialog('I-how', 'How the score works',
-      '<p>Four limbs, 0–50 each, add up to ' + MAX + '. <b>' + THR + '</b> = Takhar threshold plausibly met. <b>' + MAX + '</b> = proved on every limb. ' +
+      '<p>Four limbs, 0–50 each, add up to ' + MAX + '. <b>' + THR + '</b> = our own triage line, not a legal test. <b>' + MAX + '</b> = proved on every limb. ' +
       'Ready for counsel = at least ' + COUNSEL + ' on every limb.</p><ol>' + LIMBS.map(function (lb) { return '<li>' + E(lb.label) + ' (0–' + lb.max + ')</li>'; }).join('') +
       '</ol>' + (L.rubric.limb3_note ? '<p class="m-note">' + E(L.rubric.limb3_note) + '</p>' : '') + '<p class="m-note">' + E(L.rubric.mapping) + ' ' + E(L.rubric.order) + '</p><p class="m-note">' + E(RT.note) + '</p>' +
       '<p class="m-note">' + E(L.quarantine_note) + ' <a href="/kissed-frogs/">Kissed frogs</a> · <a href="/mr-wolf/leaderboard.json">leaderboard.json</a> v' + E(L.version) + '</p>');
@@ -153,9 +158,9 @@
       '<h2 class="sec">Routes</h2><div class="grid g3">' + routeCards + '</div>' +
       '<h2 class="sec">Limbs <span>· mark at ' + COUNSEL + ' = counsel-ready</span></h2><div class="grid g4">' + limbCards + '</div>' +
       '<section id="leaderboard"><div class="lb-h"><h2 class="sec">Leaderboard</h2><div class="seg" role="group" aria-label="Order">' +
-      '<button type="button" data-sort="case" aria-pressed="true">Our case</button><button type="button" data-sort="score" aria-pressed="false">Threshold score</button>' +
+      '<button type="button" data-sort="best" aria-pressed="true">Strongest</button><button type="button" data-sort="case" aria-pressed="false">Our framework</button>' +
       '<button type="button" class="seg-i" data-open="I-order" aria-label="About the order">i</button></div></div>' +
-      '<table class="lb"><thead><tr><th>#</th><th>Lead</th><th>Score</th></tr></thead><tbody id="mw-lb">' + body('case') + '</tbody></table></section>';
+      '<table class="lb"><thead><tr><th>#</th><th>Lead</th><th>Score</th></tr></thead><tbody id="mw-lb">' + body('best') + '</tbody></table></section>';
     app.addEventListener('click', function (e) {
       var b = e.target.closest('[data-sort]'); if (!b) return;
       app.querySelectorAll('[data-sort]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
