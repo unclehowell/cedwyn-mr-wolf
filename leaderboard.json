@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn_mr_wolf_leaderboard/v1",
- "version": "2.1.0",
+ "version": "2.1.1",
  "updated": "2026-11-14",
  "slot": 40,
  "of": 59,
@@ -60,11 +60,11 @@
    },
    "reopen_ground": "R2",
    "seed_score": false,
-   "what": "The 1987 decision turned on one finding: that Mary (Nancy) Williams never told BP she rejected the 31 October 1974 licence letters. Our case is the opposite. Every attempt to make her occupation permissive was refused or left unsigned, she pleaded ownership in July 1974, and the family record is that she wrote back after the letters. If that reply existed and the court was told there was none, the decisive finding rests on a withheld record.",
+   "what": "The 1987 decision turned on one finding: that Mary (Nancy) Williams never told BP she rejected the 31 October 1974 licence letters. Our case is the opposite. Every attempt to make her occupation permissive was refused or left unsigned, and when the letters came she was contesting BP in court: her ownership plea of July 1974 and her appeal against the warrant were both pending. The letters are dated the first day the warrant could be enforced; four days later execution was stayed, and within weeks BP withdrew the warrant, so neither her plea nor her appeal was ever decided. She was given no forum and no time to answer, and the family record is that she wrote back anyway.",
    "why": {
     "a": "None held yet. Rises when her reply, or BP's 1984–86 list of documents, shows a rejection the court was told did not exist.",
     "b": "This is the reason BP won: the court wrote that the result 'may' have been different had she plainly told BP she did not accept the letters.",
-    "c": "The reply was not before the court. The 1959 and 1965 refusals were, but the full chain (1949, 1954, the 1955 land) was not argued.",
+    "c": "The reply was not before the court. The 1959 and 1965 refusals were, but the full chain (1949, 1954, the 1955 land) and the 31 October – 25 November 1974 squeeze were not argued as her answer.",
     "d": "No communication to BP after 4 November 1974 is held yet; the 1959 and 1965 refusals are known through the judgment."
    },
    "what_would_raise_it": "Her reply, or her 1974 solicitors' letters to BP Pension Trust, BP Properties or Linklaters & Paines (4 November 1974 to 26 March 1983); BP's list of documents in the 1984–86 action; the 1959 and 1965 offer files; the 1955 order and its plan.",
@@ -105,7 +105,7 @@
    ],
    "argument": {
     "court": "The Court of Appeal held that the 1974 letters made her a licensee from the day she received them, because she never told BP she rejected them.",
-    "ours": "Her answer to permission was always no. The letters were one more attempt in a 25-year chain, and she answered that one too.",
+    "ours": "Her answer to permission was always no. When the letters came she was already contesting BP in court, and the proceedings where she was answering were closed within days, unheard. Silence was not acceptance: she had no time and no forum, and she wrote back anyway.",
     "steps": [
      {
       "date": "1949",
@@ -139,15 +139,33 @@
      },
      {
       "date": "3 Jul 1974",
-      "event": "Her plea of ownership in BP's county-court action; the action was adjourned",
-      "state": "Ownership asserted",
+      "event": "BP's new possession action part-heard and adjourned for a formal defence; she pleads ownership",
+      "state": "Ownership asserted, never relisted",
       "rec": "EV-0049"
      },
      {
+      "date": "19 Sep 1974",
+      "event": "Leave to enforce the 1962 order: warrant to issue at once, not to be enforced before 31 October; her solicitors appeal because she had no notice",
+      "state": "Appeal pending",
+      "rec": ""
+     },
+     {
       "date": "31 Oct 1974",
-      "event": "Licence letters from BP Pension Trust and BP Properties",
+      "event": "Licence letters from BP Pension Trust and BP Properties, dated the first day the warrant could be enforced",
       "state": "Sent",
       "rec": "EV-0050"
+     },
+     {
+      "date": "4 Nov 1974",
+      "event": "Hearing before the judge: execution stayed, four days after the letters",
+      "state": "Stayed",
+      "rec": "EV-0080"
+     },
+     {
+      "date": "By 25 Nov 1974",
+      "event": "BP's solicitors withdraw the warrant; her appeal and her ownership plea are left undecided",
+      "state": "Closed unheard, under 4 weeks after the letters",
+      "rec": "EV-0080"
      },
      {
       "date": "After Nov 1974",

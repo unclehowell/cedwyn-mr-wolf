@@ -1,5 +1,9 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.1.1] - 2026-11-14
+### Changed
+- MW-11: the 1974 squeeze added to the argument timeline (owner addition, issue #9). Letters dated 31 Oct 1974, the first day the warrant could be enforced; execution stayed 4 Nov; warrant withdrawn by 25 Nov, leaving her appeal and her July 1974 ownership plea undecided. Our case: no time and no forum to answer. Scores unchanged.
+
 ## [2.1.0] - 2026-11-14
 ### Changed
 - Lead #1 (MW-11) rewritten around our argument (owner feedback, issue #9): every attempt to make her occupation permissive was refused or left unsigned (1949, 1954, 1955 ambiguity, 1959, 1965), she pleaded ownership in July 1974, and the family record is that she wrote back after the 1974 letters. Records widened to the whole chain. Scores unchanged.
