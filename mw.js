@@ -1,4 +1,4 @@
-/* Mr Wolf v2.0.0 · gauge dashboard, built in the browser from leaderboard.json, routes.json and data/central.json.
+/* Mr Wolf v2.0.1 · gauge dashboard, built in the browser from leaderboard.json, routes.json and data/central.json.
    New scores appear on the next page load with no page edit. Our case, prospective, not a finding of any court. — Claude agent */
 (function () {
   'use strict';
@@ -6,7 +6,8 @@
   var SHORT = { a: 'Dishonesty', b: 'Cause', c: 'Fresh', d: 'Quality' };
   var app = document.getElementById('mw-app'), dlgs = document.getElementById('mw-dlg');
   var E = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
-  var get = function (u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); }); };
+  /* Literal fetch calls on purpose: the estate build (tools/dbserve.py FETCHLIT) keeps files fetched by a literal URL as plain files. */
+  var ok = function (r) { if (!r.ok) throw new Error(r.url + ' ' + r.status); return r.json(); };
 
   function tone(v, mark) { return v >= mark ? 'met' : (v >= mark * 0.75 ? 'near' : 'far'); }
   function arc(v, mx, mark, size, label) {
@@ -51,7 +52,11 @@
     if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('tr[data-open]')) { e.preventDefault(); open(e.target.getAttribute('data-open')); }
   });
 
-  Promise.all([get('leaderboard.json'), get('routes.json'), get('data/central.json').catch(function () { return { items: {} }; })]).then(function (res) {
+  Promise.all([
+    fetch('leaderboard.json', { cache: 'no-cache' }).then(ok),
+    fetch('routes.json', { cache: 'no-cache' }).then(ok),
+    fetch('data/central.json', { cache: 'no-cache' }).then(ok).catch(function () { return { items: {} }; })
+  ]).then(function (res) {
     var L = res[0], RT = res[1], C = res[2].items || {};
     var THR = L.threshold, MAX = L.max, LIMBS = L.rubric.limbs, ROUTES = RT.routes;
     var rows = L.rows.slice().sort(function (a, b) { return a.rank - b.rank; });
