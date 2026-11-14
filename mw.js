@@ -1,9 +1,9 @@
-/* Mr Wolf v2.0.1 · gauge dashboard, built in the browser from leaderboard.json, routes.json and data/central.json.
+/* Mr Wolf v2.1.0 · gauge dashboard, built in the browser from leaderboard.json, routes.json and data/central.json.
    New scores appear on the next page load with no page edit. Our case, prospective, not a finding of any court. — Claude agent */
 (function () {
   'use strict';
   var COUNSEL = 40;
-  var SHORT = { a: 'Dishonesty', b: 'Cause', c: 'Fresh', d: 'Quality' };
+  var SHORT = { a: 'Dishonesty', b: 'Cause', c: 'New', d: 'Quality' };
   var app = document.getElementById('mw-app'), dlgs = document.getElementById('mw-dlg');
   var E = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   /* Literal fetch calls on purpose: the estate build (tools/dbserve.py FETCHLIT) keeps files fetched by a literal URL as plain files. */
@@ -109,11 +109,23 @@
         var c = C[rc.id] || {};
         return '<li><a href="' + E(rc.href) + '"><b>' + E(rc.id) + '</b>' + (c.date_display ? ' · ' + E(c.date_display) : '') + (c.title ? ' · ' + E(c.title) : '') + '</a></li>';
       }).join('') + '</ul>';
+      var arg = '';
+      if (r.argument) {
+        arg = '<div class="m-arg"><p class="m-court"><b>1987 court:</b> ' + E(r.argument.court) + '</p><p class="m-ours"><b>Our case:</b> ' + E(r.argument.ours) + '</p>' +
+          '<ol class="tl">' + r.argument.steps.map(function (st) {
+            var hit = r.records.filter(function (rc) { return rc.id === st.rec; })[0];
+            var k = /trac|ambig/i.test(st.state) ? 'open' : (/refus|never|not taken|asserted/i.test(st.state) ? 'no' : (/decisive/i.test(st.state) ? 'court' : 'plain'));
+            return '<li class="tl-' + k + '"><span class="tl-d">' + E(st.date) + '</span><span class="tl-e">' + E(st.event) +
+              (hit ? ' <a href="' + E(hit.href) + '">' + E(st.rec) + '</a>' : '') + '</span><span class="tl-s">' + E(st.state) + '</span></li>';
+          }).join('') + '</ol></div>';
+      }
+      var rank = '<p class="m-why"><b>Why #' + r.rank + ':</b> ' + (r.limbs.b >= 40 ? 'it goes to the reason BP won (limb 2: ' + r.limbs.b + '/50)' : 'limb 2 (reason BP won): ' + r.limbs.b + '/50') +
+        '; proof of deception held today: ' + r.limbs.a + '/50.</p>';
       var routes = ROUTES.filter(function (rt) { return r.routes.indexOf(rt.key) > -1; }).map(function (rt) { return rt.label; }).join(' · ');
       dialog('L-' + r.id, E(r.title),
         '<div class="m-hero">' + arc(r.score, MAX, THR, 'm') + '<div><p class="m-gap">' +
-        (r.score >= THR ? 'Threshold reached' : (THR - r.score) + ' short of ' + THR) + '</p><p class="m-st">' + E(r.status) + '</p><p class="m-rt">' + E(routes) + '</p></div></div>' +
-        '<p>' + E(r.what) + '</p><div class="m-raise"><h3>What would raise it</h3><p>' + E(r.what_would_raise_it) + '</p></div>' +
+        (r.score >= THR ? 'Threshold reached' : (THR - r.score) + ' short of ' + THR) + '</p><p class="m-st">' + E(r.status) + '</p><p class="m-rt">' + E(routes) + '</p></div></div>' + arg +
+        '<p>' + E(r.what) + '</p>' + rank + '<div class="m-raise"><h3>What would raise it</h3><p>' + E(r.what_would_raise_it) + '</p></div>' +
         '<h3>The four limbs</h3>' + limbs + (r.seed_score ? '<p class="m-note">Seed score, waiting for its first test in our reopen research.</p>' : '') +
         '<h3>Records</h3>' + recs, '#' + r.rank + ' · ' + E(r.id));
       return '<tr data-open="L-' + E(r.id) + '" tabindex="0"><td class="rk">' + r.rank + '</td><td class="ld">' + E(r.title) + bar(r.score, MAX, THR) +
@@ -123,7 +135,7 @@
     dialog('I-how', 'How the score works',
       '<p>Four limbs, 0–50 each, add up to ' + MAX + '. <b>' + THR + '</b> = Takhar threshold plausibly met. <b>' + MAX + '</b> = proved on every limb. ' +
       'Ready for counsel = at least ' + COUNSEL + ' on every limb.</p><ol>' + LIMBS.map(function (lb) { return '<li>' + E(lb.label) + ' (0–' + lb.max + ')</li>'; }).join('') +
-      '</ol><p class="m-note">' + E(L.rubric.mapping) + ' ' + E(L.rubric.order) + '</p><p class="m-note">' + E(RT.note) + '</p>' +
+      '</ol>' + (L.rubric.limb3_note ? '<p class="m-note">' + E(L.rubric.limb3_note) + '</p>' : '') + '<p class="m-note">' + E(L.rubric.mapping) + ' ' + E(L.rubric.order) + '</p><p class="m-note">' + E(RT.note) + '</p>' +
       '<p class="m-note">' + E(L.quarantine_note) + ' <a href="/kissed-frogs/">Kissed frogs</a> · <a href="/mr-wolf/leaderboard.json">leaderboard.json</a> v' + E(L.version) + '</p>');
 
     app.innerHTML =
