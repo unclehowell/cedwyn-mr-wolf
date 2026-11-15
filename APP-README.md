@@ -29,4 +29,4 @@ When changing the board, preserve the evidence-only rule, keep each factual stat
 
 ## Preview
 
-Cloudflare Pages project `cedwyn-mr-wolf` previews branches and pull requests at [cedwyn-mr-wolf.pages.dev](https://cedwyn-mr-wolf.pages.dev/). The canonical public page is the BucklerFamily.estate route above.
+Cloudflare Pages project `cedwyn-mr-wolf` previews branches and pull requests at [cedwyn-mr-wolf.pages.dev](https://cedwyn-mr-wolf.pages.dev/). Its Git-connected build is intentionally a no-build static deployment from the repository root; do not restore a build command or an output directory unless a real build script and output are added to this repository. The canonical public page is the BucklerFamily.estate route above.
