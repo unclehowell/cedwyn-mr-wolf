@@ -1,5 +1,17 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [3.0.0] - 2026-11-15
+### Changed
+- Evidence only (owner brief 15 Nov 2026, issue #16). Every statement on the board cites a record in the evidence catalogue. Each lead is now a list of held records and a list of pending records; interpretation, "our case" text and the framework order are removed.
+- Scoring counts held records alone. Inference scores 0. Limbs 2 to 4 are scored only where a held record shows a discrepancy (limb 1). Nothing pending counts.
+- Result: one lead scores. MW-01, the 1939 agreement signature (EV-0023) against the family-held inscription (EV-0902): 60 of 200. Every other lead is 0 until a record is obtained.
+- MW-11: her reply to the 1974 letters is shown as pending with no catalogue record; it no longer carries any score.
+### Removed
+- MW-19 and MW-21 (no held record), MW-16 (framework reading), MW-18 (no catalogue record), MW-14 and MW-15 (no discrepancy and nothing pending).
+### Added
+- Chips for held records cited and records pending, with the pending items that have no catalogue record at all.
+- The law panel: Takhar, RBS v Highland, Lazarus Estates v Beasley, Limitation Act 1980 s.32(1).
+
 ## [2.3.0] - 2026-11-14
 ### Changed
 - Diligence pass (issue #14): every lead re-audited against the 1987 judgment text, Takhar [2019] UKSC 13 and RBS v Highland [2013] EWCA Civ 328 [106]. Default order is now **Strongest**: reach to the one finding the 1987 result rests on (limb 2), then what is new (limb 3), then evidence held. The owner's order stays as **Our framework**.
