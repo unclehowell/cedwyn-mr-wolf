@@ -1,5 +1,13 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [3.0.1] - 2026-11-15
+### Changed
+- Re-labelled the 100/200 line throughout the interface as an internal research triage marker, not a legal threshold or finding. Gauge accessibility text and lead status copy use the same qualification.
+- Clarified that the 40/50-per-limb counsel-preparation marker is an internal file checklist, not a legal test or admissibility determination.
+- Clarified that Dishonesty and Concealment route tags are research categories, not findings; Public bodies is a distinct institutional enquiry route and is not, by itself, a ground to set aside the 1987 judgment.
+- Corrected the public canonical URL and page metadata to `https://bucklerfamily.estate/mr-wolf/`.
+- Replaced obsolete contributor documentation describing the retired source branch, earlier schema and superseded scoring model. No lead facts, cited records or scores changed.
+
 ## [3.0.0] - 2026-11-15
 ### Changed
 - Evidence only (owner brief 15 Nov 2026, issue #16). Every statement on the board cites a record in the evidence catalogue. Each lead is now a list of held records and a list of pending records; interpretation, "our case" text and the framework order are removed.
