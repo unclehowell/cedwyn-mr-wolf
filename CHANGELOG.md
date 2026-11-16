@@ -1,5 +1,9 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [4.0.1] - 2026-11-16
+### Fixed
+- Tree view record windows on the live site: the estate runtime rewrites root-relative fetch paths into the app folder (`/api/catalogue/EV-0080` became `/mr-wolf/api/catalogue/EV-0080`, a 404), so every catalogue leaf showed "unavailable". Source URLs are now made absolute (same origin) before fetching.
+
 ## [4.0.0] - 2026-11-16
 ### Added
 - **Legal Threshold Tree** (owner Master Build Prompt, 16 Nov 2026; cedwyn-mr-wolf#20), now the landing view. A toggle at the top switches between Tree view and Gauge view.
