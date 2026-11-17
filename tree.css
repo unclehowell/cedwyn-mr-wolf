@@ -79,18 +79,22 @@ body[data-view="tree"] .top{max-width:880px;margin:0 auto}
 @media (prefers-reduced-motion:no-preference){.tw-world{transition:none}}
 .tw-short{font:700 11px system-ui,sans-serif}
 
-/* Current proof position: route-by-route evidence readout, not a probability score. */
-.proof-position{max-width:1100px;margin:10px auto 12px;padding:11px 12px 9px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
-.pp-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:0 0 8px;flex-wrap:wrap}
-.pp-head h2{font:700 17px/1.2 Georgia,"Times New Roman",serif;margin:0}
-.pp-head p{font-size:11px;color:var(--mute);margin:0}
-.pp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.pp-card{min-width:0;border:1px solid var(--line);border-radius:9px;padding:9px 10px;background:#fffdf8}
+/* Current proof position: a compact disclosure that preserves the full-screen tree as the default experience. */
+.proof-position{max-width:880px;margin:8px auto 0;padding:0;border:0;background:none}
+.pp-details{border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.pp-details>summary{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;padding:7px 10px;cursor:pointer;list-style:none;color:var(--ink);font-size:13px}
+.pp-details>summary::-webkit-details-marker{display:none}
+.pp-details>summary strong{font:700 14px Georgia,"Times New Roman",serif}
+.pp-details>summary span{font-size:11px;color:var(--mute)}
+.pp-details>summary:after{content:"Open";margin-left:auto;color:var(--acc);font-size:11px;font-weight:600}
+.pp-details[open]>summary:after{content:"Close"}
+.pp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0 9px 9px}
+.pp-card{min-width:0;border:1px solid var(--line);border-radius:9px;padding:8px 9px;background:#fffdf8}
 .pp-topic{font:700 10px/1.25 system-ui,sans-serif;letter-spacing:.06em;color:var(--acc);margin:0 0 4px}
-.pp-card h3{font:700 14px/1.2 system-ui,sans-serif;margin:0 0 5px}
+.pp-card h3{font:700 13px/1.2 system-ui,sans-serif;margin:0 0 5px}
 .pp-card p{font-size:12px;line-height:1.4;margin:0 0 6px}
 .pp-card .pp-gap{color:var(--ink);padding-top:5px;border-top:1px solid var(--line)}
 .pp-sources{font-size:11px!important;color:var(--mute);margin:0!important}
 .pp-sources a{font-weight:600;text-decoration:underline}
-.pp-caveat{font-size:10px;line-height:1.35;color:var(--mute);margin:7px 0 0}
-@media(max-width:760px){.pp-grid{grid-template-columns:1fr}.pp-card{padding:10px 11px}.pp-head h2{font-size:16px}}
+.pp-caveat{font-size:10px;line-height:1.35;color:var(--mute);margin:0;padding:0 10px 9px}
+@media(max-width:760px){.pp-grid{grid-template-columns:1fr}.pp-card{padding:9px 10px}.pp-details>summary{align-items:flex-start}.pp-details>summary span{flex:1 1 100%}}
