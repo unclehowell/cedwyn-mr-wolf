@@ -591,7 +591,7 @@
         "A04"
       ],
       "status": "not_established",
-      "status_note": "The unilateral 1974 licence mechanism is identified, and the absence-of-repudiation finding was operative. No held record currently proves conscious and deliberate dishonesty by a named actor. The principal gap is a communicated post-letter rejection or a knowingly false account of Mary's post-letter stance.",
+      "status_note": "The 1974 unilateral-licence mechanism is documented. BP was not unaware of Mary's ownership claim: it was a party to the 1974 proceedings. The fraud question is whether BP or its solicitors knowingly misrepresented Mary's post-letter stance or withheld a communicated rejection. No such primary record is presently held.",
       "standard": "Civil standard (balance of probabilities); an inference of dishonesty needs pleaded facts that tilt the balance.",
       "uncertainty": "Whether a 1939 document can be \"an operative cause\" of a 1987 judgment that does not mention it is a legal question.",
       "pathway": "domestic",
@@ -624,7 +624,7 @@
         "A13"
       ],
       "status": "partial",
-      "status_note": "The decisive alleged falsity concerns the post-letter position. No primary repudiation or contradictory BP account is presently held. The separate 1939 signature concern remains unexamined by a document examiner and is not cited in the 1987 judgment.",
+      "status_note": "Mary's 1959/1965 refusals and July 1974 ownership plea pre-date the 31 October letters; they establish a history of opposition, not by themselves a repudiation communicated during the critical post-letter period. No primary post-letter repudiation or contradictory BP account is currently held.",
       "pathway": "domestic"
     },
     {
@@ -766,7 +766,7 @@
         "A17"
       ],
       "status": "not_established",
-      "status_note": "The ICR's 9 October 2026 letter quotes HMLR's 25 May response as saying that the Registry had not received or known of a family interest or ongoing dispute at first registration. That identifies a possible information gap. It does not prove who withheld what, or with what intent. The original application, any declarations, enquiries and notice records remain unread.",
+      "status_note": "The suspected concealment is not that BP did not know Mary claimed ownership: BP was party to the 1974 proceedings. The narrower question is whether the 1982–83 registration package failed to disclose the unilateral, disputed nature of the purported licence or represented her occupation as settled permission, leaving HMLR unaware. The applicant forms, declarations and notice records remain to be read.",
       "pathway": "domestic",
       "short": "Concealment"
     },
@@ -782,7 +782,7 @@
       ],
       "status": "partial",
       "pathway": "domestic",
-      "status_note": "The fact in issue is identified: Mary was in occupation and had asserted ownership before the 1983 farmhouse application. The original pleading remains pending; the 1987 judgment recounts the earlier claim."
+      "status_note": "BP knew of Mary's claim from the 1974 proceedings. The unresolved point is whether the nature of the disputed occupation and her response to the unilateral licence were accurately disclosed to HMLR in 1982–83."
     },
     {
       "id": "C2",
@@ -796,7 +796,7 @@
       ],
       "status": "partial",
       "pathway": "domestic",
-      "status_note": "BP was a party to the 1974 possession proceedings in which Mary asserted ownership. That supports corporate knowledge of a dispute, but the chain from that knowledge to the specific 1983 applicant/solicitor and any decision to withhold information is not yet established."
+      "status_note": "The 1974 proceedings establish BP's corporate knowledge of Mary's ownership claim. HMLR's 23 March 2026 letter identifies Linklaters & Paines as the solicitors who submitted both 1982–83 applications. Whether the same firm handled the 1974 letters, and what the registration team knew, must be proved from the firm files."
     },
     {
       "id": "C3",
@@ -810,7 +810,7 @@
       ],
       "status": "partial",
       "pathway": "domestic",
-      "status_note": "HMLR's later response says it had not received or was unaware of the family's interest. That is evidence of the Registry's later-stated position, not proof that BP suppressed a fact or made a false answer. The 1983 forms and examiner correspondence are the decisive missing records."
+      "status_note": "HMLR's 25 May 2026 letter says it did not receive or know of a family interest or possible dispute and no caution was lodged. The 30 July schedule lists the application and examination records but no item expressly described as an occupier notice. That does not prove no notice was sent; obtain any service record and read Forms 1C/1E."
     },
     {
       "id": "C4",
