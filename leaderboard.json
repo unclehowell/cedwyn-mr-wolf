@@ -256,67 +256,79 @@
           "rec": "EV-0080"
         },
         {
-          "t": "HM Land Registry's 23 March 2026 history gives two dates: WA231076 applied for on 30 November 1982, relying on a 19 November 1982 BP-to-BP conveyance; WA240304 applied for on 23 February 1983, relying on a 23 May 1975 conveyance. BP Properties was applicant on both.",
+          "t": "HMLR's 23 March 2026 history gives two dates: WA231076 applied for on 30 November 1982, relying on a 19 November 1982 BP-to-BP conveyance; WA240304 applied for on 23 February 1983, relying on a 23 May 1975 conveyance. BP Properties was applicant on both.",
           "rec": "EV-0147"
         },
         {
-          "t": "HMLR's 19 April 2026 Stage 1 letter says a 1971 abstract was lodged for WA231076 and that HMLR had sight of a copy for WA240304. It also quotes wording from modern Form FR1; that does not establish what the historical Forms 1E and 1C actually said in 1982–83.",
+          "t": "HMLR's 19 April 2026 Stage 1 letter says a 1971 abstract was lodged for WA231076 and HMLR had sight of a copy for WA240304. It quotes wording from modern Form FR1; this does not establish what the historical Forms 1E and 1C actually said in 1982–83.",
           "rec": "EV-0149"
         },
         {
-          "t": "The 9 October 2026 ICR letter quotes HMLR's 25 May 2026 Stage 2 response as saying the Registry had not received or been aware of any family interest or possibly ongoing dispute at registration, and that no caution had been lodged. This is a retrospective statement of HMLR's position, not proof of what BP answered.",
-          "rec": "EV-0370"
+          "t": "HMLR's 25 May 2026 Stage 2 letter says it did not receive or know of any family interest or possible ongoing dispute at registration and no caution had been lodged. It says the applicants provided documentary title. This is HMLR's retrospective account; it does not reveal what BP answered on Form 1C or Form 1E.",
+          "rec": "EV-0153"
         },
         {
-          "t": "The 30 July 2026 schedule identifies 43 listed documents across the two files, including the WA240304 Form 1C and examination correspondence. The underlying forms and letters must be read before drawing conclusions about disclosure, enquiries or notice.",
+          "t": "HMLR's 30 July 2026 letter confirms all listed file documents are held and open to public inspection. It lists 30 items for WA231076 and 13 for WA240304 (43 in total).",
           "rec": "EV-0161"
         },
         {
-          "t": "The 1983 legal framework was the Land Registration Act 1925 and the Rules then in force. The later 2003 Rule 28 / Form DI disclosure requirement must not be applied retrospectively. The exact 1983 forms and any declaration actually required by the Registrar are decisive.",
+          "t": "For WA231076, the schedule identifies item 13 as the Form 1E first-registration application, item 17 as the A13 list of documents lodged, item 16 as 12 May 1983 correspondence from Linklaters and Land Registry, and item 18 as an undated Linklaters letter.",
+          "rec": "EV-0161"
+        },
+        {
+          "t": "For WA240304, the schedule identifies item 11 as Form 1C, item 7 as the D23 inside-exam form and Linklaters letter dated 8 April 1983, item 4 as 12 April 1983 correspondence, item 5 as undated Linklaters letters, item 10 as the first register, and items 12–13 as the May 1975 conveyance and a plan dated 23 February 1975.",
+          "rec": "EV-0161"
+        },
+        {
+          "t": "The 1983 legal framework was the Land Registration Act 1925 and Rules then in force. The later 2003 Rule 28 / Form DI disclosure requirement must not be applied retrospectively. Section 14 declarations were required only if the Registrar called for them.",
           "rec": "EV-0265"
         },
         {
-          "t": "The Court of Appeal treated first registration as not defeating any title Mary had already acquired which qualified as an overriding interest. A registration irregularity therefore presents a distinct register-remedy issue; it was not the basis of the 1987 licence decision.",
+          "t": "The Court of Appeal treated any title Mary had already acquired as capable of binding BP's registration as an overriding interest. Registration irregularity is therefore a distinct register-remedy issue; it was not the basis of the 1987 licence decision.",
           "rec": "EV-0080"
         }
       ],
       "pending": [
         {
-          "t": "WA240304 item 11: the original Form 1C application and every certificate, declaration or enclosure actually lodged.",
+          "t": "Obtain WA240304 item 11: Form 1C, including every page, certificate, declaration and enclosure.",
           "rec": "EV-0063"
         },
         {
-          "t": "WA231076 item 13: the original Form 1E and the complete document list / A13, including any applicant or solicitor declaration.",
-          "rec": "MR-0020"
-        },
-        {
-          "t": "WA240304 items 4, 5 and 7: 12 April 1983 correspondence, undated Linklaters letters, and the D23 examination form with Linklaters' letter of 8 April 1983.",
-          "rec": "EV-0069"
-        },
-        {
-          "t": "Any section 14 Land Registration Act 1925 affidavit or declaration: establish first whether the Registrar required one, then obtain its exact wording, maker, date and exhibits.",
-          "rec": "EV-0265"
-        },
-        {
-          "t": "Any notice, enquiry or advertisement under the 1925 Act and Rules, and any record of service on Mary or another occupier. No caution was lodged according to HMLR's later account; that alone does not establish whether another notice was prescribed or whether any existing right remained overriding.",
-          "rec": "EV-0060"
-        },
-        {
-          "t": "The 1983 version of the Land Registration Rules and the original Forms 1C and 1E. Do not substitute modern FR1/Form DI wording or the later 2003 disclosure rule.",
-          "rec": "EV-0265"
-        },
-        {
-          "t": "The 1969 conveyance and 1971 abstract: reconcile HMLR's statement that the abstract was lodged/sighted with the 30 July 2026 schedule, which does not list them. Their absence from that schedule alone does not prove they were never lodged.",
+          "t": "Obtain WA231076 item 13: Form 1E, and item 17: A13 list of documents lodged with first registration.",
           "rec": "EV-0161"
+        },
+        {
+          "t": "Obtain WA240304 item 7: D23 inside-exam form and Linklaters letter of 8 April 1983; item 4: 12 April 1983 correspondence; item 5: undated Linklaters letters.",
+          "rec": "EV-0161"
+        },
+        {
+          "t": "Obtain WA231076 item 16: 12 May 1983 correspondence between Linklaters & Paines and HM Land Registry; item 18: undated Linklaters letter.",
+          "rec": "EV-0161"
+        },
+        {
+          "t": "Obtain WA240304 item 10: the register as first made; item 12: the 23 May 1975 conveyance; item 13: the plan dated 23 February 1975. Compare the two plan dates and their land extent.",
+          "rec": "EV-0161"
+        },
+        {
+          "t": "Establish whether the Registrar required any section 14 Land Registration Act 1925 affidavit or declaration. If so, obtain its exact wording, maker, date and exhibits.",
+          "rec": "EV-0265"
+        },
+        {
+          "t": "Obtain any notice, enquiry or advertisement record relating to Mary or other occupiers, including the date, method, recipient and address. HMLR says no caution was lodged; that does not establish whether some other notice was prescribed.",
+          "rec": "EV-0161"
+        },
+        {
+          "t": "Reconcile HMLR's statement that the 1971 abstract was lodged/sighted with the 30 July schedule, which does not list it. Its absence from the schedule alone does not prove it was never lodged.",
+          "rec": "EV-0149"
         }
       ],
       "why": {
-        "a": "The ICR's 9 October 2026 letter quotes HMLR as saying it was unaware of any family interest or ongoing dispute. That identifies an information gap, but the 1982–83 applicant forms, any section 14 declaration and the examiner's correspondence are not yet read; no false answer has been verified.",
+        "a": "The 25 May HMLR letter establishes the Registry's retrospective position that it had no awareness of a family interest or dispute and no caution had been lodged. It does not show what BP declared. The 1982–83 forms, any section 14 declaration and the examination correspondence must be read before alleging a false answer or deliberate concealment.",
         "b": "A proved registration mistake, false declaration or lack of proper care may support a separate rectification or indemnity route. The 1987 judgment did not rely on first registration to decide the legal effect of the 1974 letters.",
-        "c": "The contents of the first-registration files and notice history are not established by the 1987 judgment. This is principally a separate registration/remedy enquiry unless a dishonest statement is shown to have been material to the 1987 decision.",
-        "d": "The HMLR 23 March, 19 April and 25 May correspondence is recorded, and a 30 July file schedule exists. The decisive Forms 1C/1E, any declaration, D23 and notice records remain to be inspected."
+        "c": "The original application and examination records were not determined by the 1987 judgment. Their significance is principally a separate registration/remedy enquiry unless a dishonest statement is shown to have been material to the 1987 decision.",
+        "d": "The 19 April, 25 May and 30 July HMLR PDFs are now directly read. The 30 July letter confirms 43 documents are held and open to public inspection. The underlying Forms 1C/1E, D23, A13 and correspondence still need to be obtained and assessed."
       },
-      "status": "HMLR says it was unaware of family interests; the applicant's declarations and notice history remain uninspected",
+      "status": "HMLR says it was unaware of family interests; 43 registration-file documents are held and open to inspection",
       "records": [
         {
           "id": "EV-0080",
@@ -333,10 +345,6 @@
         {
           "id": "EV-0153",
           "href": "/research/evidence/ev-0153-hmlr-stage-two-complaint-decision/"
-        },
-        {
-          "id": "EV-0370",
-          "href": "/research/evidence/ev-0370-hm-land-registry-independent-complaints-reviewer-independent-review-of-hm-land-registry/"
         },
         {
           "id": "EV-0161",
