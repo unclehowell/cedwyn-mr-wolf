@@ -1,3 +1,12 @@
+# Changelog
+
+## 4.1.0 — 17 November 2026
+- Added a route-by-route proof-position panel separating the documented 1974 unilateral-licence mechanism from proof of dishonesty, the 1982–83 registration disclosure gap from deliberate concealment, and public-body record-holding from state participation.
+- Expanded MW-11 with the 1959/1965 tenancy-offer context, the 1974 ownership plea, the court's precise no-repudiation finding, and the missing evidence that could contradict it. No score increase: the post-letter repudiation/knowledge record remains unheld.
+- Expanded MW-02 with the separate WA231076 and WA240304 application dates, the 19 April / 25 May 2026 HMLR positions, the 30 July file schedule, and the exact outstanding application and examination records. No score increase: Forms 1C/1E and any required declaration remain unread.
+- Added the historical 1982–83 legal framework: Land Registration Act 1925 ss.14, 53, 70(1)(g), 115–116. Explicitly warns not to apply the later 2003 Rules r.28 / Form DI retrospectively.
+- Preserved evidence-only scoring. The dashboard now explains that /200 scores are internal triage markers, not probabilities; the 1939 signature lead is not a finding and is not part of the 1987 judgment's reasoning.
+
 # Changelog — Mr Wolf (webapp 40 of 59)
 
 ## [4.0.1] - 2026-11-16
