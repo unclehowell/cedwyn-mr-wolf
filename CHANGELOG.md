@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.1.1 — 17 November 2026
+- Preserved the existing tree-first and gauge-second interface; moved the new proof-position analysis into a compact, closed-by-default disclosure beneath the original header.
+- Reused the live app's existing cream/brown palette, serif heading and restrained border treatment. The full-screen Legal Threshold Tree remains the default view.
+- Documented that the standalone `.pages.dev` project is preview-only; production at `bucklerfamily.estate/mr-wolf/` is assembled and published by the estate's central build after this app repository's approved changes reach `main`.
+
 ## 4.1.0 — 17 November 2026
 - Added a route-by-route proof-position panel separating the documented 1974 unilateral-licence mechanism from proof of dishonesty, the 1982–83 registration disclosure gap from deliberate concealment, and public-body record-holding from state participation.
 - Expanded MW-11 with the 1959/1965 tenancy-offer context, Mary's 1974 ownership plea (known to BP), the court's precise no-repudiation finding, and the missing evidence that could contradict it. No score increase: the post-letter repudiation/knowledge record remains unheld.
