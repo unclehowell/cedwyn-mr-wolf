@@ -6,13 +6,13 @@ Served at [bucklerfamily.estate/mr-wolf/](https://bucklerfamily.estate/mr-wolf/)
 
 The authoritative application repository is [unclehowell/cedwyn-mr-wolf](https://github.com/unclehowell/cedwyn-mr-wolf), branch `main`. Make application changes on a feature branch here and open a pull request into `main`. The retained `section/mr-wolf` branch in `unclehowell/cedwyn` is a legacy compatibility copy, not the development source. The estate build reads this repository directly for the `deploy: repo` app.
 
-## Two views (v4.0.0)
+## Two views (v4.1.0)
 
-A toggle at the top switches between **Tree view** (the default landing view) and **Gauge view**. `?view=tree` or `?view=gauges` opens either; `#MW-NN` opens a gauge lead; `#tree/N/<node>` and `#tree/R/<record>` open a tree node or leaf. The last view chosen is remembered per browser (localStorage, wrapped in try/catch).
+A route-by-route **Current proof position** panel now appears above both views. It separates the 1974 unilateral-licence mechanism from proof of dishonesty, the 1982–83 registration information gap from deliberate concealment, and public-body record handling from evidence of state participation. It states the missing proof for each route. A toggle below it switches between **Tree view** (the default landing view) and **Gauge view**. `?view=tree` or `?view=gauges` opens either; `#MW-NN` opens a gauge lead; `#tree/N/<node>` and `#tree/R/<record>` open a tree node or leaf. The last view chosen is remembered per browser (localStorage, wrapped in try/catch).
 
 ### Tree view: the Legal Threshold Tree
 
-The law is the tree; catalogue records are the leaves.
+The law is the tree; catalogue records are the leaves. The 4.1.0 tree adds the 1982–83 Land Registration Act 1925 framework (ss.13–14, 53 and 70(1)(g)), later Rule 28 / Form DI as a non-retrospective comparator, and the 1925 Act's ss.115–116 registration offences. The app marks the 1983 Forms 1C/1E and any Registrar-required s.14 declaration as unread; it does not infer a false answer.
 
 - `legal-tree.json` (`cedwyn_mr_wolf_legal_tree/v1`): the trunk, pathways (domestic courts, Strasbourg, register rectification), legal gateways, tests, constituent elements, evidential requirements and procedural obstacles. Every legal node carries its authority with a pinpoint, jurisdiction, date, URL and a verification level (`primary`, `secondary`, `record`, `citation`). A node's status (not established, partially evidenced, strongly evidenced, procedurally blocked, requires legal determination, research required) is a legal-analysis judgment, never a sum of its leaves.
 - `evidence-links.json` (`cedwyn_mr_wolf_evidence_links/v1`): one row per relationship between a legal node and a record: `node`, `record`, `source`, `relation` (supports, undermines, contradicts, neutral, missing, hypothetical), `strength` (green, orange, red, brown, black, grey, judged against that node only), `reason`, `proposition`, optional `weaknesses`, `alternatives`, `needs`, and `assessment` {status, date, by}. Many-to-many: a record can sit on several nodes with a different strength on each.
@@ -28,7 +28,7 @@ The 0–200 total is an internal research rubric comprising four limbs, each sco
 
 The 100/200 line is an internal research triage marker only. It is not the legal test for setting aside a judgment, a finding of dishonesty or a prediction. The 40/50-on-each-limb marker is an internal file-preparation checklist, not a legal test or a determination of admissibility.
 
-Route tags classify the record or institutional enquiry involved. In particular, a public-body tag is a separate institutional enquiry route; it is not, by itself, a ground to set aside the 1987 judgment. Any register-rectification or public-body remedy enquiry requires its own evidence and legal basis.
+Route tags classify the record or institutional enquiry involved. In particular, a public-body tag is a separate institutional enquiry route; it is not, by itself, a ground to set aside the 1987 judgment. The 4.1.0 position panel and tree notes do not raise any scores: no post-letter repudiation, false 1983 declaration, deliberate suppression or public-official participation is currently proved by the records linked. Any register-rectification or public-body remedy enquiry requires its own evidence and legal basis.
 
 ## Data and implementation
 
