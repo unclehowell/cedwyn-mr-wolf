@@ -6,9 +6,9 @@ Served at [bucklerfamily.estate/mr-wolf/](https://bucklerfamily.estate/mr-wolf/)
 
 The authoritative application repository is [unclehowell/cedwyn-mr-wolf](https://github.com/unclehowell/cedwyn-mr-wolf), branch `main`. Make application changes on a feature branch here and open a pull request into `main`. The retained `section/mr-wolf` branch in `unclehowell/cedwyn` is a legacy compatibility copy, not the development source. The estate build reads this repository directly for the `deploy: repo` app.
 
-## Two views (v4.1.0)
+## Two views (v4.1.1)
 
-A route-by-route **Current proof position** panel now appears above both views. It separates the 1974 unilateral-licence mechanism from proof of dishonesty, the 1982–83 registration information gap from deliberate concealment, and public-body record handling from evidence of state participation. It states the missing proof for each route. A toggle below it switches between **Tree view** (the default landing view) and **Gauge view**. `?view=tree` or `?view=gauges` opens either; `#MW-NN` opens a gauge lead; `#tree/N/<node>` and `#tree/R/<record>` open a tree node or leaf. The last view chosen is remembered per browser (localStorage, wrapped in try/catch).
+A compact, closed-by-default **Current proof position** disclosure sits below the existing header. Opening it separates the 1974 unilateral-licence mechanism from proof of dishonesty, the 1982–83 registration information gap from deliberate concealment, and public-body record handling from evidence of state participation. It states the missing proof for each route. The original **Tree view** remains the default landing view; the existing toggle still switches to **Gauge view**. `?view=tree` or `?view=gauges` opens either; `#MW-NN` opens a gauge lead; `#tree/N/<node>` and `#tree/R/<record>` open a tree node or leaf. The last view chosen is remembered per browser (localStorage, wrapped in try/catch).
 
 ### Tree view: the Legal Threshold Tree
 
@@ -41,6 +41,15 @@ Route tags classify the record or institutional enquiry involved. In particular,
 
 When changing the board, preserve the evidence-only rule, keep each factual statement linked to a catalogue record, keep missing material in the pending list, and never score inference or pending material. If catalogue records need creating or changing, make that change in the BucklerFamily-Estate catalogue workflow rather than editing the generated `data/central.json` snapshot.
 
-## Preview
+## Production release and preview
 
-Cloudflare Pages project `cedwyn-mr-wolf` previews branches and pull requests at [cedwyn-mr-wolf.pages.dev](https://cedwyn-mr-wolf.pages.dev/). Its Git-connected build is intentionally a no-build static deployment from the repository root; do not restore a build command or an output directory unless a real build script and output are added to this repository. The canonical public page is the BucklerFamily.estate route above.
+The canonical public page is [bucklerfamily.estate/mr-wolf/](https://bucklerfamily.estate/mr-wolf/). It is part of the main BucklerFamily.estate site, not a separate Pages custom domain.
+
+Cloudflare Pages project `cedwyn-mr-wolf` is a standalone, no-build, static preview for this repository. Its `.pages.dev` URLs are not the production site and do not include the estate's shared header/runtime. Do not use them as proof of the production appearance.
+
+The production release path is:
+1. Merge the reviewed application change into this repository's `main` branch.
+2. Run the existing `build-cedwyn` workflow (`workflow_dispatch`) in `unclehowell/cedwyn`. The estate assembler reads this repository's `main` directly for the `deploy: repo` app, adds the shared estate assets and builds the canonical `/mr-wolf/` route.
+3. Verify the deployed page at [bucklerfamily.estate/mr-wolf/](https://bucklerfamily.estate/mr-wolf/), including both views and the shared header.
+
+The Mr Wolf repository remains the sole source of truth for application code. Do not edit the legacy `section/mr-wolf` branch or attach the apex domain to the standalone preview project.
