@@ -1178,6 +1178,76 @@
         "date": "2026-11-17",
         "by": "Mr Wolf 4.1 proof-position review"
       }
+    },
+    {
+      "node": "C1",
+      "record": "EV-0370",
+      "source": "catalogue",
+      "relation": "supports",
+      "strength": "green",
+      "reason": "The ICR's 9 October 2026 letter reproduces HMLR's 25 May statement that the Registry had not received or known of a family interest or possible dispute at registration. This proves what HMLR later said, not what BP declared.",
+      "proposition": "HMLR's retrospective non-awareness statement is documented in an official ICR letter.",
+      "assessment": {
+        "status": "assessed",
+        "date": "2026-11-17",
+        "by": "Mr Wolf 4.1 proof-position review"
+      }
+    },
+    {
+      "node": "C3",
+      "record": "EV-0370",
+      "source": "catalogue",
+      "relation": "neutral",
+      "strength": "green",
+      "reason": "The ICR letter quotes HMLR's later statement, but does not disclose the contents of BP's 1983 Form 1C or Form 1E or establish intentional withholding.",
+      "proposition": "The Registry's later account identifies an information gap; the cause remains unproved.",
+      "assessment": {
+        "status": "assessed",
+        "date": "2026-11-17",
+        "by": "Mr Wolf 4.1 proof-position review"
+      }
+    },
+    {
+      "node": "G1",
+      "record": "EV-0370",
+      "source": "catalogue",
+      "relation": "neutral",
+      "strength": "green",
+      "reason": "The ICR letter records the later complaint response and the Registry's retrospective account. It is not a contemporaneous record of public-officer knowledge or participation.",
+      "proposition": "This is an institutional complaint record, not evidence of state participation in the earlier corporate events.",
+      "assessment": {
+        "status": "assessed",
+        "date": "2026-11-17",
+        "by": "Mr Wolf 4.1 proof-position review"
+      }
+    },
+    {
+      "node": "G2",
+      "record": "EV-0370",
+      "source": "catalogue",
+      "relation": "neutral",
+      "strength": "green",
+      "reason": "The ICR letter records the decision not to investigate further. It evidences later complaint handling only, not historic concealment or government involvement.",
+      "proposition": "The ICR's 2026 handling is separate from the 1982–87 events.",
+      "assessment": {
+        "status": "assessed",
+        "date": "2026-11-17",
+        "by": "Mr Wolf 4.1 proof-position review"
+      }
+    },
+    {
+      "node": "R1",
+      "record": "EV-0370",
+      "source": "catalogue",
+      "relation": "neutral",
+      "strength": "green",
+      "reason": "The ICR letter quotes HMLR's retrospective statement about its lack of awareness at first registration; it does not establish the contents of the original application or a register mistake.",
+      "proposition": "This source documents HMLR's later explanation, while the original first-registration forms remain outstanding.",
+      "assessment": {
+        "status": "assessed",
+        "date": "2026-11-17",
+        "by": "Mr Wolf 4.1 proof-position review"
+      }
     }
   ]
 }
