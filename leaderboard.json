@@ -148,7 +148,7 @@
           "rec": "EV-0080"
         },
         {
-          "t": "Mary pleaded ownership in the 1974 BP Pension Trust possession proceedings; the Court of Appeal records that the action was never finally heard. The original pleading is not yet held.",
+          "t": "Mary pleaded ownership in the 1974 BP Pension Trust possession proceedings; BP was a party. The Court of Appeal records that the action was never finally heard. The original pleading is not yet held.",
           "rec": "EV-0080"
         },
         {
@@ -276,6 +276,10 @@
           "rec": "EV-0153"
         },
         {
+          "t": "Neither HMLR's 25 May response nor the 30 July inventory identifies a notice to Mary or an occupier-service record. The schedule does not name a notice item, but that does not prove none was sent; any separate notice/service record and the applicable 1983 notice rules must be obtained.",
+          "rec": "EV-0161"
+        },
+        {
           "t": "HMLR's 30 July 2026 letter confirms all listed file documents are held and open to public inspection. It lists 30 items for WA231076 and 13 for WA240304 (43 in total).",
           "rec": "EV-0161"
         },
@@ -328,15 +332,19 @@
         {
           "t": "Reconcile HMLR's statement that the 1971 abstract was lodged/sighted with the 30 July schedule, which does not list it. Its absence from the schedule alone does not prove it was never lodged.",
           "rec": "EV-0149"
+        },
+        {
+          "t": "Compare Linklaters & Paines' 1974 licence correspondence and knowledge with the firm's 1982–83 Form 1E/Form 1C submissions, D23 examination and 12 May 1983 letters. Establish whether the firm acted in both periods and what the registration team knew.",
+          "rec": "EV-0147"
         }
       ],
       "why": {
-        "a": "HMLR's later correspondence identifies an information gap between BP's known 1974 dispute and the Registry's stated lack of awareness. Linklaters & Paines submitted both applications, but the actual 1982–83 forms, any section 14 declaration and examiner correspondence must be read before alleging a false answer or deliberate concealment.",
+        "a": "Mary's ownership claim was not hidden from BP: BP was involved in her 1974 proceedings. The narrower suspected concealment is whether the 1982–83 application package failed to reveal the disputed, unilateral nature of the purported licence or represented her occupation as settled permission, leaving HMLR unaware. The forms and any Registrar-required declaration must be read before alleging a false answer.",
         "b": "A proved registration mistake, false declaration or lack of proper care may support a separate rectification or indemnity route. The 1987 judgment did not rely on first registration to decide the legal effect of the 1974 letters.",
-        "c": "The original application and examination records were not determined by the 1987 judgment. Their significance is principally a separate registration/remedy enquiry unless a dishonest statement is shown to have been material to the 1987 decision.",
+        "c": "The 1987 judgment records the prior ownership dispute and the legal effect later attributed to the 1974 letters. It does not determine what was said in the 1982–83 first-registration applications or whether Mary received notice. Those are separate registration and notice questions unless linked to a dishonest statement material to the 1987 outcome.",
         "d": "The 19 April, 25 May and 30 July HMLR PDFs are now directly read. The 30 July letter confirms 43 documents are held and open to public inspection. The underlying Forms 1C/1E, D23, A13 and correspondence still need to be obtained and assessed."
       },
-      "status": "Linklaters & Paines submitted both BP applications; HMLR says it was unaware of family interests; original declarations remain to be read",
+      "status": "BP knew Mary's ownership claim; question is whether the registration package concealed the disputed licence and whether Mary was notified",
       "records": [
         {
           "id": "EV-0080",
