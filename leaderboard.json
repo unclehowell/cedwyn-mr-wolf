@@ -192,6 +192,10 @@
         {
           "t": "A reported post-1974 newspaper account of Mary's renewed rejection is not yet identified by a verified title, date and page. Locate the original clipping before relying on it.",
           "rec": null
+        },
+        {
+          "t": "Establish whether Linklaters & Paines acted for BP in the 1974 licence episode; compare the original 1974 letters and solicitor correspondence with the firm's 1982–83 Form 1E/Form 1C submissions and examination correspondence.",
+          "rec": "EV-0147"
         }
       ],
       "why": {
@@ -260,6 +264,10 @@
           "rec": "EV-0147"
         },
         {
+          "t": "HMLR's 23 March 2026 letter identifies Linklaters & Paines as the solicitors who submitted both first-registration applications for BP Properties: WA231076 on 30 November 1982 and WA240304 on 23 February 1983. The 30 July schedule lists further Linklaters correspondence in both files. Whether the firm also handled the 1974 licence episode, and what it knew at each date, must be checked against its original file.",
+          "rec": "EV-0147"
+        },
+        {
           "t": "HMLR's 19 April 2026 Stage 1 letter says a 1971 abstract was lodged for WA231076 and HMLR had sight of a copy for WA240304. It quotes wording from modern Form FR1; this does not establish what the historical Forms 1E and 1C actually said in 1982–83.",
           "rec": "EV-0149"
         },
@@ -323,12 +331,12 @@
         }
       ],
       "why": {
-        "a": "The 25 May HMLR letter establishes the Registry's retrospective position that it had no awareness of a family interest or dispute and no caution had been lodged. It does not show what BP declared. The 1982–83 forms, any section 14 declaration and the examination correspondence must be read before alleging a false answer or deliberate concealment.",
+        "a": "HMLR's later correspondence identifies an information gap between BP's known 1974 dispute and the Registry's stated lack of awareness. Linklaters & Paines submitted both applications, but the actual 1982–83 forms, any section 14 declaration and examiner correspondence must be read before alleging a false answer or deliberate concealment.",
         "b": "A proved registration mistake, false declaration or lack of proper care may support a separate rectification or indemnity route. The 1987 judgment did not rely on first registration to decide the legal effect of the 1974 letters.",
         "c": "The original application and examination records were not determined by the 1987 judgment. Their significance is principally a separate registration/remedy enquiry unless a dishonest statement is shown to have been material to the 1987 decision.",
         "d": "The 19 April, 25 May and 30 July HMLR PDFs are now directly read. The 30 July letter confirms 43 documents are held and open to public inspection. The underlying Forms 1C/1E, D23, A13 and correspondence still need to be obtained and assessed."
       },
-      "status": "HMLR says it was unaware of family interests; 43 registration-file documents are held and open to inspection",
+      "status": "Linklaters & Paines submitted both BP applications; HMLR says it was unaware of family interests; original declarations remain to be read",
       "records": [
         {
           "id": "EV-0080",
