@@ -6,7 +6,7 @@
 - Expanded MW-02 with the separate WA231076 and WA240304 application dates, the 19 April / 25 May 2026 HMLR positions, the 30 July file schedule, and the exact outstanding application and examination records. No score increase: Forms 1C/1E and any required declaration remain unread.
 - Added the historical 1982–83 legal framework: Land Registration Act 1925 ss.14, 53, 70(1)(g), 115–116. Explicitly warns not to apply the later 2003 Rules r.28 / Form DI retrospectively.
 - Clarified that s.70(1)(g) could protect pre-existing rights of an occupier on first registration; actual occupation alone did not create ownership. The s.70 enquiry exception is not a general first-registration notice rule; s.53 caution and s.14 (only if required by the Registrar) are treated separately.
-- Added the ICR's 9 October 2026 letter (EV-0370) as the source quoting HMLR's 25 May position, while keeping the original Stage 2 letter's provenance separate.
+- Directly read the archived HMLR Stage 2 response (EV-0153) and 30 July document schedule (EV-0161); verified the 43-item inventory and public-inspection route. EV-0370 remains file-pending and is not used as substantive proof.
 - Preserved evidence-only scoring. The dashboard now explains that /200 scores are internal triage markers, not probabilities; the 1939 signature lead is not a finding and is not part of the 1987 judgment's reasoning.
 
 # Changelog — Mr Wolf (webapp 40 of 59)
