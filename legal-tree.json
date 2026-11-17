@@ -243,12 +243,12 @@
     },
     "A32": {
       "cite": "Land Registration Act 1925 (historical framework), ss.13–14, 53 and 70(1)(g)",
-      "pin": "s.14: applicant and solicitor each made an affidavit/declaration only if required by the registrar; s.53: caution against first registration; s.70(1)(g): rights of persons in actual occupation were overriding unless an enquiry was made and rights were not disclosed.",
+      "pin": "s.13: notice was due where prescribed; s.14: applicant and solicitor each made an affidavit/declaration only if required by the registrar, covering disclosure of title documents, charges and facts material to title; s.53: a qualifying cautioner could secure notice of a first-registration application; s.70(1)(g): pre-existing rights of persons in actual occupation were overriding interests.",
       "jurisdiction": "England and Wales",
       "date": "In force at the 1982–83 applications; check amendments at each application date",
-      "url": "https://www.legislation.gov.uk/ukpga/Geo5/15-16/21/1994-10-31/data.html",
+      "url": "https://www.legislation.gov.uk/ukpga/Geo5/15-16/21/enacted/data.xht?view=snippet&wrap=true",
       "verified": "primary",
-      "note": "Section 14 was conditional on the registrar requiring an affidavit or declaration. It did not impose that declaration in every application."
+      "note": "Do not infer a universal applicant disclosure checkbox or automatic notice to every occupier. Section 14 was conditional on the registrar requiring a declaration; section 53 notice followed a lodged caution. Section 70(1)(g) protected rights, not occupation alone. The actual 1983 Rules and forms must be read."
     },
     "A33": {
       "cite": "Land Registration Rules 2003, rule 28 (Form DI)",
@@ -267,6 +267,14 @@
       "url": "https://www.legislation.gov.uk/ukpga/Geo5/15-16/21/enacted/data.xht?view=snippet&wrap=true",
       "verified": "primary",
       "note": "Potential historical offences, not findings. The precise document/fact, actor, intent and act of suppression or procurement must be proved."
+    },
+    "A35": {
+      "cite": "Law Commission, Land Registration for the Twenty-First Century: A Conveyancing Revolution, Law Com No 271, para 8.21",
+      "pin": "Explains that the s.70(1)(g) 'enquiry made and rights not disclosed' wording has no relevance to overriding interests on first registration; first registration normally does not alter the priority of an existing overriding interest.",
+      "jurisdiction": "England and Wales",
+      "date": "2001",
+      "url": "https://www.landecon.cam.ac.uk/sites/default/files/2023-04/law-commission-registration.pdf",
+      "verified": "secondary"
     }
   },
   "note": "The legal framework is the tree; catalogue records are the leaves (evidence-links.json). A node's status is a legal-analysis judgment, never a sum of its leaves. Not legal advice and not a finding of any court.",
@@ -583,7 +591,7 @@
         "A04"
       ],
       "status": "not_established",
-      "status_note": "The unilateral 1974 licence mechanism is identified, and the absence-of-repudiation finding was operative. But no held record currently proves conscious and deliberate dishonesty by a named actor. The principal gap is a communicated post-letter rejection or a knowingly false account of Mary's post-letter stance.",
+      "status_note": "The unilateral 1974 licence mechanism is identified, and the absence-of-repudiation finding was operative. No held record currently proves conscious and deliberate dishonesty by a named actor. The principal gap is a communicated post-letter rejection or a knowingly false account of Mary's post-letter stance.",
       "standard": "Civil standard (balance of probabilities); an inference of dishonesty needs pleaded facts that tilt the balance.",
       "uncertainty": "Whether a 1939 document can be \"an operative cause\" of a 1987 judgment that does not mention it is a legal question.",
       "pathway": "domestic",
@@ -758,7 +766,7 @@
         "A17"
       ],
       "status": "not_established",
-      "status_note": "HMLR's 25 May 2026 response is recorded as saying it did not receive or know of a family interest or ongoing dispute at first registration. That identifies a possible information gap. Deliberate concealment is not established: the original application, any declarations, enquiries and notice records remain unread.",
+      "status_note": "The ICR's 9 October 2026 letter quotes HMLR's 25 May response as saying that the Registry had not received or known of a family interest or ongoing dispute at first registration. That identifies a possible information gap. It does not prove who withheld what, or with what intent. The original application, any declarations, enquiries and notice records remain unread.",
       "pathway": "domestic",
       "short": "Concealment"
     },
@@ -860,7 +868,7 @@
         "A21"
       ],
       "status": "not_established",
-      "status_note": "The current records show public bodies as registrars, record-holders and later complaint respondents. No contemporaneous record presently shows a public officer or department joining, directing or knowingly assisting a corporate strategy in 1974–87.",
+      "status_note": "The current HMLR records document later administrative responses and the Registry's retrospective account of its knowledge. They do not themselves show an official joining, directing or knowingly assisting a corporate strategy in 1974–87.",
       "pathway": "domestic",
       "short": "Government"
     },
@@ -1121,14 +1129,15 @@
       "parent": "R",
       "kind": "element",
       "label": "1983 disclosure and notice rules",
-      "title": "Historical law: what the applicant and registrar had to disclose in 1982–83",
-      "proposition": "Apply the Land Registration Act 1925 and the Rules then in force. Section 70(1)(g) made rights of persons in actual occupation overriding unless an enquiry was made and the rights were not disclosed; section 53 allowed a caution against first registration; section 14 allowed the registrar to require the applicant and solicitor to make an affidavit or declaration about deeds, encumbrances and material facts. Section 14 was conditional on the registrar requiring it. The later Land Registration Rules 2003 rule 28 / Form DI must not be applied retrospectively. The exact 1983 Form 1C/Form 1E, any section 14 declaration, and any registrar enquiry must be examined before alleging a false answer.",
+      "title": "Historical law: actual occupation, cautions and disclosure in 1982–83",
+      "proposition": "Apply the Land Registration Act 1925 and the Rules then in force. Section 70(1)(g) protected pre-existing rights of persons in actual occupation as overriding interests; actual occupation alone did not create ownership. The Law Commission later explained that the wording about enquiry and non-disclosure had no relevance to overriding interests on first registration. Section 53 allowed a person claiming a qualifying interest to lodge a caution which secured notice. Section 14 allowed the registrar to require the applicant and solicitor to make an affidavit or declaration about title documents, charges and material facts, but only if the registrar required it. The later Land Registration Rules 2003 rule 28 / Form DI must not be applied retrospectively. The exact 1983 Form 1C/Form 1E, any section 14 declaration and any prescribed notice must be examined before alleging a false answer or a failure to notify.",
       "authority": [
         "A32",
-        "A33"
+        "A33",
+        "A35"
       ],
       "status": "legal_determination",
-      "status_note": "The historical statutory distinction is established. What BP was asked, what it answered, and whether the registrar required a declaration remain unknown until the actual files are obtained.",
+      "status_note": "The historical framework is now distinguished from the later Form DI regime. What BP was asked, what it answered, whether the Registrar required a declaration, and what notices were prescribed by the 1983 Rules remain unknown until the original files are obtained.",
       "pathway": "remedy"
     },
     {
