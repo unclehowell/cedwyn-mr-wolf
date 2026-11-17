@@ -1178,6 +1178,34 @@
         "date": "2026-11-17",
         "by": "Mr Wolf 4.1 proof-position review"
       }
+    },
+    {
+      "node": "FI1",
+      "record": "EV-0147",
+      "source": "catalogue",
+      "relation": "supports",
+      "strength": "green",
+      "reason": "The archived 23 March 2026 HMLR letter directly identifies Linklaters & Paines as the firm that submitted both first-registration applications for BP Properties. It does not identify the individual solicitor or prove the firm's role in 1974.",
+      "proposition": "The applicant's solicitors for both 1982–83 first-registration applications are identified.",
+      "assessment": {
+        "status": "assessed",
+        "date": "2026-11-17",
+        "by": "Mr Wolf 4.1 source verification"
+      }
+    },
+    {
+      "node": "FI2",
+      "record": "EV-0147",
+      "source": "catalogue",
+      "relation": "neutral",
+      "strength": "orange",
+      "reason": "The same firm submitted the two applications, but this record does not show that it had the 1974 licence file or that the application solicitor knew of Mary's earlier ownership plea.",
+      "proposition": "The registration solicitor is identified; knowledge of the 1974 dispute remains a question.",
+      "assessment": {
+        "status": "assessed",
+        "date": "2026-11-17",
+        "by": "Mr Wolf 4.1 source verification"
+      }
     }
   ]
 }
