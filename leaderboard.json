@@ -264,8 +264,8 @@
           "rec": "EV-0149"
         },
         {
-          "t": "HMLR's 25 May 2026 Stage 2 response is recorded as saying it had not received or been aware of any family interest or possibly ongoing dispute at the time of registration, and that no caution had been lodged. This is HMLR's later account of its knowledge, not proof of what BP answered on the original forms.",
-          "rec": "EV-0153"
+          "t": "The 9 October 2026 ICR letter quotes HMLR's 25 May 2026 Stage 2 response as saying the Registry had not received or been aware of any family interest or possibly ongoing dispute at registration, and that no caution had been lodged. This is a retrospective statement of HMLR's position, not proof of what BP answered.",
+          "rec": "EV-0370"
         },
         {
           "t": "The 30 July 2026 schedule identifies 43 listed documents across the two files, including the WA240304 Form 1C and examination correspondence. The underlying forms and letters must be read before drawing conclusions about disclosure, enquiries or notice.",
@@ -298,7 +298,7 @@
           "rec": "EV-0265"
         },
         {
-          "t": "Any notice, enquiry, advertisement or service record concerning Mary or other occupiers, including the date, method, recipient and address used. HMLR's statement that no caution was lodged does not answer whether any other notice or enquiry occurred.",
+          "t": "Any notice, enquiry or advertisement under the 1925 Act and Rules, and any record of service on Mary or another occupier. No caution was lodged according to HMLR's later account; that alone does not establish whether another notice was prescribed or whether any existing right remained overriding.",
           "rec": "EV-0060"
         },
         {
@@ -311,7 +311,7 @@
         }
       ],
       "why": {
-        "a": "HMLR's later correspondence identifies an information gap between BP's known 1974 dispute and the Registry's stated lack of awareness. But the 1982–83 applicant forms, any section 14 declaration and the examiner's correspondence are not yet read; no false application answer has been verified.",
+        "a": "The ICR's 9 October 2026 letter quotes HMLR as saying it was unaware of any family interest or ongoing dispute. That identifies an information gap, but the 1982–83 applicant forms, any section 14 declaration and the examiner's correspondence are not yet read; no false answer has been verified.",
         "b": "A proved registration mistake, false declaration or lack of proper care may support a separate rectification or indemnity route. The 1987 judgment did not rely on first registration to decide the legal effect of the 1974 letters.",
         "c": "The contents of the first-registration files and notice history are not established by the 1987 judgment. This is principally a separate registration/remedy enquiry unless a dishonest statement is shown to have been material to the 1987 decision.",
         "d": "The HMLR 23 March, 19 April and 25 May correspondence is recorded, and a 30 July file schedule exists. The decisive Forms 1C/1E, any declaration, D23 and notice records remain to be inspected."
@@ -333,6 +333,10 @@
         {
           "id": "EV-0153",
           "href": "/research/evidence/ev-0153-hmlr-stage-two-complaint-decision/"
+        },
+        {
+          "id": "EV-0370",
+          "href": "/research/evidence/ev-0370-hm-land-registry-independent-complaints-reviewer-independent-review-of-hm-land-registry/"
         },
         {
           "id": "EV-0161",
